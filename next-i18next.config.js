@@ -1,8 +1,8 @@
 module.exports = {
   i18n: {
-    defaultLocale: 'zh-Hant',
-    locales: ['zh-Hant'],
+    defaultLocale: 'en',
+    locales: ['en', 'zh-Hant'],
   },
   reloadOnPrerender: true,
-  fallbackLng: 'zh-Hant',
+  fallbackLng: 'en',
 }

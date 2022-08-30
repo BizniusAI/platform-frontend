@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import {
+  faChevronDown,
+  faEarthAmericas,
+} from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,7 +19,7 @@ const Header = (): JSX.Element => {
   const [isMobileHidden, setIsMobileHidden] = useState<boolean>(true)
 
   return (
-    <header className="fixed top-0 w-full bg-white z-50 select-none">
+    <header className="fixed top-0 w-full bg-white z-50 select-none shadow-md">
       <nav className="flex justify-between md:justify-start items-center gap-x-10 px-4 md:px-8 h-16">
         <div className="flex w-32 order-2 md:order-1">
           <Link href="/" passHref>
@@ -40,8 +43,8 @@ const Header = (): JSX.Element => {
             {t('register', { ns: 'common' })}
           </button>
           <div className="border border-gray-200"></div>
-          <div className="flex items-center gap-2 px-1 text-gray-500 cursor-pointer">
-            <FontAwesomeIcon className="w-4" icon={faGlobe} />
+          <div className="flex items-center gap-2 px-1 cursor-pointer">
+            <FontAwesomeIcon className="w-4" icon={faEarthAmericas} />
             <span className="inline-flex gap-1">
               {languages[i18n.language.toLocaleLowerCase()]}
               <FontAwesomeIcon className="w-2" icon={faChevronDown} />

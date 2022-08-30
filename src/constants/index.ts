@@ -1,25 +1,20 @@
 export const languages: TLanguages = {
+  en: 'English',
   'zh-hant': '繁體中文',
 }
 
 export const menuLinks: TMenu[] = [
   {
-    name: 'latestNews',
-    endpoint: '/news',
-  },
-  {
-    name: 'plans',
-    endpoint: '/plans',
+    name: 'service',
+    endpoint: '/services',
     children: [],
   },
   {
     name: 'about',
     endpoint: '/about',
-    children: [],
   },
   {
-    name: 'tutorial',
-    endpoint: '/tutorial',
-    children: [],
+    name: 'news',
+    endpoint: '/news',
   },
 ]
