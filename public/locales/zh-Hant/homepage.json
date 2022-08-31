@@ -3,9 +3,26 @@
 
   "main.slogan": "Grows Bitcoin safe & easy on the trustable investment platform",
 
+  "features.btcSupport": "Native Bitcoin Support",
+  "features.nonCustodial": "Non-Custodial Management",
+  "features.easyAndNoKyc": "Easy & No KYC Onboarding",
+
   "investmentIntro.title": "Invest Bitcoin in 3 Steps",
+  "investmentIntro.step1.title": "Buy & Store Bitcoin",
+  "investmentIntro.step1.content": "This is just a placeholder with meaningless words. As you can see it is just used for design purpose. This is just a placeholder with meaningless words. As you can see it is just used for design purpose.",
+  "investmentIntro.step2.title": "Build your Portfolio",
+  "investmentIntro.step2.content": "Deposit to Bitcoin vault to grow your assets.",
+  "investmentIntro.step3.title": "Earn Trustuble Yields",
+  "investmentIntro.step3.content": "This is just a placeholder with meaningless words. As you can see it is just used for design purpose. This is just a placeholder with meaningless words. As you can see it is just used for design purpose.",
 
-  "partners.title": "Partners",
+  "partners.title": "合作夥伴",
 
-  "consultation.title": "Exclusive Consultation"
+  "consultation.title": "Exclusive Consultation",
+  "consultation.form.name": "姓名",
+  "consultation.form.email": "電子信箱",
+  "consultation.form.holdCrypto": "Do you currently hold crypto?",
+  "consultation.form.knowMore": "我想知道更多關於...",
+  "consultation.form.knowMore.yes": "是",
+  "consultation.form.knowMore.no": "否",
+  "consultation.form.submit": "送出"
 }

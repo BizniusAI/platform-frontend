@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faChevronDown,
-  faEarthAmericas,
-} from '@fortawesome/free-solid-svg-icons'
+import { faRightLeft, faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
 import logo from '@public/vercel.svg'
@@ -15,8 +13,15 @@ import { languages } from '@/constants'
 
 const Header = (): JSX.Element => {
   const { t, i18n } = useTranslation(['menu', 'common'])
-
   const [isMobileHidden, setIsMobileHidden] = useState<boolean>(true)
+  const router = useRouter()
+
+  const changeLocale = () => {
+    router.push(router.pathname, router.asPath, {
+      locale:
+        i18n.language.toLocaleLowerCase() === 'zh-hant' ? 'en' : 'zh-hant',
+    })
+  }
 
   return (
     <header className="fixed top-0 w-full bg-white z-50 select-none shadow-md">
@@ -36,6 +41,7 @@ const Header = (): JSX.Element => {
         <div className="hidden md:block md:grow md:order-3"></div>
 
         <div className="hidden md:flex md:gap-2 text-sm tracking-wider md:order-4">
+          {/*
           <button className="rounded px-3 font-light">
             {t('login', { ns: 'common' })}
           </button>
@@ -43,11 +49,15 @@ const Header = (): JSX.Element => {
             {t('register', { ns: 'common' })}
           </button>
           <div className="border border-gray-200"></div>
-          <div className="flex items-center gap-2 px-1 cursor-pointer">
+          */}
+          <div
+            className="flex items-center gap-2 px-1 cursor-pointer"
+            onClick={changeLocale}
+          >
             <FontAwesomeIcon className="w-4" icon={faEarthAmericas} />
-            <span className="inline-flex gap-1">
+            <span className="inline-flex gap-2">
               {languages[i18n.language.toLocaleLowerCase()]}
-              <FontAwesomeIcon className="w-2" icon={faChevronDown} />
+              <FontAwesomeIcon className="w-3" icon={faRightLeft} />
             </span>
           </div>
         </div>
@@ -65,9 +75,11 @@ const Header = (): JSX.Element => {
         </div>
 
         <div className="md:hidden order-3">
+          {/*
           <button className="rounded px-3 text-blue-500">
             {t('login', { ns: 'common' })}
           </button>
+          */}
         </div>
       </nav>
 

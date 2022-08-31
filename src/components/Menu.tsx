@@ -26,7 +26,7 @@ export const DesktopMenu = () => {
                 // link.children !== undefined ? 'inline-flex' : ''
               )}
             >
-              {link.children !== undefined ? (
+              {link.children !== undefined && link.children.length > 0 ? (
                 <>
                   <Tooltip className="w-60 -top-24 -left-28">
                     <Tooltip.Body>
@@ -40,10 +40,7 @@ export const DesktopMenu = () => {
                     </Tooltip.Body>
 
                     <Tooltip.Content>
-                      <>
-                        Didn&apos;t find the page you want to export to? You can
-                        connect Notion to add Notion pages
-                      </>
+                      <>Nothing to show here.</>
                     </Tooltip.Content>
                   </Tooltip>
                 </>
