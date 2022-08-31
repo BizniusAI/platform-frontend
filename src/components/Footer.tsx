@@ -5,7 +5,7 @@ const Footer = (): JSX.Element => {
 
   return (
     <footer className="bg-gray-50 py-8">
-      <h5 className="text-xs text-center">{t('footer.slogan')}</h5>
+      <h5 className="text-xs text-center select-none">{t('footer.slogan')}</h5>
     </footer>
   )
 }

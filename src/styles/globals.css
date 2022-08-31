@@ -31,6 +31,15 @@ a {
 }
 */
 
+.bg-blue-radial {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 88, 248, 0.6) 0%,
+    rgba(0, 88, 248, 0) 100%
+  );
+  filter: blur(1.5rem);
+}
+
 .hamburger-btn {
   width: 20px;
   height: 24px;
