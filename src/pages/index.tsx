@@ -1,8 +1,22 @@
 import type { GetStaticProps, NextPage } from 'next'
+import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Layout from '@/components/Layout'
+
+// images
+import featuresBtcSupport from '@public/img/home/features.btcSupport.svg'
+import featuresEasyAndNoKyc from '@public/img/home/features.easyAndNoKyc.svg'
+import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
+import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
+import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
+import consultation from '@public/img/home/consultation.svg'
+import partnersAppWorks from '@public/img/home/partners.appWorks.png'
+import partnersDLCLink from '@public/img/home/partners.dlcLink.png'
+import partnersStacksFoundation from '@public/img/home/partners.stacksFoundation.png'
+import partnersTAcc from '@public/img/home/partners.tacc.png'
+import partnersWeb3Startup from '@public/img/home/partners.web3Startup.png'
 
 const Home: NextPage = () => {
   const { t } = useTranslation(['homepage'])
@@ -33,9 +47,11 @@ const Home: NextPage = () => {
       </section>
 
       <section className="bg-gray-50 mx-auto py-6 pb-12 px-4 sm:px-auto">
-        <div className="container mx-auto grid grid-cols-3 gap-16">
-          <div className="bg-white p-4 rounded shadow-md grid grid-cols-5 gap-4">
-            <div className="col-span-2"></div>
+        <div className="container mx-auto grid grid-cols-3 gap-12">
+          <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+            <div className="col-span-2 flex items-center">
+              <Image src={featuresBtcSupport} alt={t('features.btcSupport')} />
+            </div>
             <div className="col-span-3 flex items-center">
               <p className="font-bold text-center">
                 {t('features.btcSupport')}
@@ -43,8 +59,13 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="bg-white p-4 rounded shadow-md grid grid-cols-5 gap-4">
-            <div className="col-span-2"></div>
+          <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+            <div className="col-span-2 flex items-center">
+              <Image
+                src={featuresNonCustodial}
+                alt={t('features.nonCustodial')}
+              />
+            </div>
             <div className="col-span-3 flex items-center">
               <p className="font-bold text-center">
                 {t('features.nonCustodial')}
@@ -52,8 +73,13 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="bg-white p-4 rounded shadow-md grid grid-cols-5 gap-4">
-            <div className="col-span-2"></div>
+          <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+            <div className="col-span-2 flex items-center">
+              <Image
+                src={featuresEasyAndNoKyc}
+                alt={t('features.easyAndNoKyc')}
+              />
+            </div>
             <div className="col-span-3 flex items-center">
               <p className="font-bold text-center">
                 {t('features.easyAndNoKyc')}
@@ -74,7 +100,7 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-5 gap-4">
             <div className="col-span-3">
               <div className="flex gap-4 items-center">
-                <div className="w-10">
+                <div className="w-10 shrink-0">
                   <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold">
                     1
                   </div>
@@ -93,12 +119,22 @@ const Home: NextPage = () => {
                 </p>
               </div>
             </div>
+
+            <div className="col-span-2">
+              <div className="relative h-full mt-4">
+                <Image
+                  src={investmentIntroStep1}
+                  layout="fill"
+                  alt={t('investmentIntro.step1.title')}
+                />
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-5 gap-4">
             <div className="col-span-3">
               <div className="flex gap-4 items-center">
-                <div className="w-10">
+                <div className="w-10 shrink-0">
                   <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold">
                     2
                   </div>
@@ -122,7 +158,7 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-5 gap-4">
             <div className="col-span-3">
               <div className="flex gap-4 items-center">
-                <div className="w-10">
+                <div className="w-10 shrink-0">
                   <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold">
                     3
                   </div>
@@ -141,6 +177,16 @@ const Home: NextPage = () => {
                 </p>
               </div>
             </div>
+
+            <div className="col-span-2">
+              <div className="relative h-full mt-4">
+                <Image
+                  src={investmentIntroStep3}
+                  layout="fill"
+                  alt={t('investmentIntro.step3.title')}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -150,6 +196,28 @@ const Home: NextPage = () => {
           <h2 className="text-2xl font-bold text-center">
             {t('partners.title')}
           </h2>
+
+          <div className="grid grid-rows-2 grid-cols-6 gap-4">
+            <div className="col-span-2">
+              <Image src={partnersStacksFoundation} alt="Stacks Foundation" />
+            </div>
+
+            <div className="col-span-2">
+              <Image src={partnersAppWorks} alt="App Works" />
+            </div>
+
+            <div className="col-span-2">
+              <Image src={partnersDLCLink} alt="DLC.Link" />
+            </div>
+
+            <div className="col-start-2 col-span-2">
+              <Image src={partnersWeb3Startup} alt="Stacks Web3.0 Startup" />
+            </div>
+
+            <div className="col-span-2">
+              <Image src={partnersTAcc} className="col-span-2" alt="TAcc+" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -193,7 +261,9 @@ const Home: NextPage = () => {
               </button>
             </form>
           </div>
-          <div className="col-span-3"></div>
+          <div className="col-span-3 flex justify-center pl-8">
+            <Image src={consultation} alt={t('consultation.title')} />
+          </div>
         </div>
       </section>
     </Layout>

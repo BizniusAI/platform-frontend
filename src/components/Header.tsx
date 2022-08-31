@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import logo from '@public/vercel.svg'
+import logo from '@public/img/lucidLakeLogo.svg'
 
 import { DesktopMenu, MobileMenu } from '@/components/Menu'
 import { languages } from '@/constants'
