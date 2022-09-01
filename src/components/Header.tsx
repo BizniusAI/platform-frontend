@@ -26,7 +26,7 @@ const Header = (): JSX.Element => {
   return (
     <header className="fixed top-0 w-full bg-white z-50 select-none shadow-md">
       <nav className="flex justify-between md:justify-start items-center gap-x-10 px-4 md:px-8 h-16">
-        <div className="flex w-32 order-2 md:order-1">
+        <div className="flex w-32 order-2 md:order-1 cursor-pointer">
           <Link href="/" passHref>
             <Image
               src={logo}

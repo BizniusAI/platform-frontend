@@ -6,8 +6,8 @@ export const languages: TLanguages = {
 export const menuLinks: TMenu[] = [
   {
     name: 'service',
-    endpoint: '/services',
-    children: [],
+    endpoint: '/services/low-risk',
+    // children: [],
   },
   {
     name: 'about',

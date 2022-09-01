@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -21,6 +22,7 @@ import partnersWeb3Startup from '@public/img/home/partners.web3Startup.png'
 
 const Home: NextPage = () => {
   const { t } = useTranslation(['homepage'])
+  const router = useRouter()
 
   return (
     <Layout>
@@ -172,7 +174,10 @@ const Home: NextPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 pl-14">
-              <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#24D8FF] cursor-pointer">
+              <div
+                className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#24D8FF] cursor-pointer"
+                onClick={() => router.push('/services/low-risk')}
+              >
                 <div className="w-full p-4 rounded-[1.25rem] bg-white">
                   <h3 className="text-3xl sm:text-4xl font-bold text-center">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#24D8FF] select-none">
@@ -187,6 +192,7 @@ const Home: NextPage = () => {
                         <span className="text-3xl tracking-wider">3.1</span>%
                       </p>
                     </div>
+
                     <div className="p-2 rounded-xl shadow-md">
                       <p>{t('period.title', { ns: 'services' })}</p>
                       <p className="font-bold">
