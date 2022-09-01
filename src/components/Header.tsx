@@ -56,7 +56,7 @@ const Header = (): JSX.Element => {
           >
             <FontAwesomeIcon className="w-4" icon={faEarthAmericas} />
             <span className="inline-flex gap-2">
-              {languages[i18n.language.toLocaleLowerCase()]}
+              {languages[i18n.language?.toLocaleLowerCase()]}
               <FontAwesomeIcon className="w-3" icon={faRightLeft} />
             </span>
           </div>
