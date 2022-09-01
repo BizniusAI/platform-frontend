@@ -171,12 +171,55 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 h-96 md:h-80 mt-4 pl-14">
-              <div className="relative h-full p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#24D8FF]">
-                <div className="w-full h-full rounded-[1.25rem] bg-white"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 pl-14">
+              <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#24D8FF] cursor-pointer">
+                <div className="w-full p-4 rounded-[1.25rem] bg-white">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-center">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#24D8FF] select-none">
+                      {t('lowRisk.title', { ns: 'services' })}
+                    </span>
+                  </h3>
+
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                    <div className="p-2 rounded-xl shadow-md">
+                      <p>{t('apy.title', { ns: 'services' })}</p>
+                      <p className="font-bold">
+                        <span className="text-3xl tracking-wider">3.1</span>%
+                      </p>
+                    </div>
+                    <div className="p-2 rounded-xl shadow-md">
+                      <p>{t('period.title', { ns: 'services' })}</p>
+                      <p className="font-bold">
+                        <span className="text-3xl tracking-wider">1</span>week
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="relative h-full p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#7F25E1]">
-                <div className="w-full h-full rounded-[1.25rem] bg-white"></div>
+
+              <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#7F25E1] cursor-not-allowed">
+                <div className="w-full p-4 rounded-[1.25rem] bg-white">
+                  <h3 className="text-3xl sm:text-4xl font-bold text-center">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#7F25E1] select-none">
+                      {t('highRisk.title', { ns: 'services' })}
+                    </span>
+                  </h3>
+
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                    <div className="p-2 rounded-xl shadow-md">
+                      <p>{t('apy.title', { ns: 'services' })}</p>
+                      <p className="font-bold">
+                        <span className="text-3xl tracking-wider">5.2</span>%
+                      </p>
+                    </div>
+                    <div className="p-2 rounded-xl shadow-md">
+                      <p>{t('period.title', { ns: 'services' })}</p>
+                      <p className="font-bold">
+                        <span className="text-3xl tracking-wider">1</span>week
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -300,7 +343,12 @@ const Home: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale = '' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['homepage', 'menu', 'common'])),
+      ...(await serverSideTranslations(locale, [
+        'homepage',
+        'menu',
+        'common',
+        'services',
+      ])),
       // Will be passed to the page component as props
     },
   }
