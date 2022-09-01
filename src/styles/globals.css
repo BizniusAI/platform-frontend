@@ -40,6 +40,24 @@ a {
   filter: blur(1.5rem);
 }
 
+.bg-yellow-radial {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(242, 169, 0, 0.6) 0%,
+    rgba(242, 169, 0, 0) 100%
+  );
+  filter: blur(1.5rem);
+}
+
+.bg-purple-radial {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(127, 37, 225, 0.3) 0%,
+    rgba(127, 37, 225, 0) 100%
+  );
+  filter: blur(1.5rem);
+}
+
 .hamburger-btn {
   width: 20px;
   height: 24px;

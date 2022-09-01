@@ -27,8 +27,8 @@ const Service: NextPage = () => {
   const serviceName = serviceNameMapping[String(name)]
 
   return (
-    <Layout title={`${t(serviceName)} - Service`}>
-      <section className="bg-gray-50 mx-auto py-6 pb-12 px-4 sm:px-auto">
+    <Layout title={t(`${serviceName}.title`)}>
+      <section className="bg-gray-50 py-6 pb-12 px-4 sm:px-auto">
         <div className="container mx-auto">
           <div className="pt-4">
             <h1 className="flex items-center gap-8 text-3xl sm:text-4xl font-bold">
