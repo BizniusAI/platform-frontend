@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 
 // images
@@ -15,28 +16,26 @@ const Service: NextPage = () => {
 
   return (
     <Layout title={t('title')}>
-      <section className="bg-gray-50 py-6 pb-12 px-4 sm:px-auto overflow-hidden">
-        <div className="container mx-auto">
-          <div className="relative">
-            <div className="md:px-8 lg:px-24 text-center z-10">
-              <h1 className="mt-2 px-4 md:px-24 lg:px-44 font-bold text-3xl sm:text-4xl sm:leading-[3rem] select-none">
-                {t('slogan')}
-              </h1>
+      <section className="bg-gray-50 py-6 pb-12 overflow-hidden">
+        <Container>
+          <div className="md:px-4 lg:px-16 text-center z-10">
+            <h1 className="mt-2 px-4 md:px-16 lg:px-32 font-bold text-3xl sm:text-4xl sm:leading-[3rem] select-none">
+              {t('slogan')}
+            </h1>
 
-              <p className="mt-8">{t('description.p1')}</p>
-              <p className="mt-4">{t('description.p2')}</p>
-            </div>
-
-            <div className="absolute z-0 -top-4 left-0 w-52 h-52 bg-blue-radial"></div>
-            <div className="absolute z-0 -bottom-40 left-0 w-96 h-96 bg-purple-radial"></div>
-            <div className="absolute z-0 top-4 right-8 w-52 h-52 bg-yellow-radial"></div>
-            <div className="absolute z-0 -bottom-40 right-0 w-52 h-52 bg-blue-radial"></div>
+            <p className="mt-8">{t('description.p1')}</p>
+            <p className="mt-4">{t('description.p2')}</p>
           </div>
-        </div>
+
+          <div className="absolute z-0 -top-4 left-0 w-52 h-52 bg-blue-radial"></div>
+          <div className="absolute z-0 -bottom-40 left-0 w-96 h-96 bg-purple-radial"></div>
+          <div className="absolute z-0 top-4 right-8 w-52 h-52 bg-yellow-radial"></div>
+          <div className="absolute z-0 -bottom-40 right-0 w-52 h-52 bg-blue-radial"></div>
+        </Container>
       </section>
 
-      <section className="py-6 pb-12 px-4 sm:px-auto">
-        <div className="container mx-auto">
+      <section className="py-6 pb-12">
+        <Container>
           <h2 className="text-2xl font-bold text-center select-none">
             {t('team')}
           </h2>
@@ -90,7 +89,7 @@ const Service: NextPage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </Layout>
   )

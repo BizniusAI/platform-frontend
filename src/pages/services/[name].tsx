@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
+import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 
 // images
@@ -29,7 +30,7 @@ const Service: NextPage = () => {
   return (
     <Layout title={t(`${serviceName}.title`)}>
       <section className="bg-gray-50 py-6 pb-12 px-4 sm:px-auto">
-        <div className="container mx-auto">
+        <Container>
           <div className="pt-4">
             <h1 className="flex items-center gap-8 text-3xl sm:text-4xl font-bold">
               <div className="relative w-16 h-16 shrink-0">
@@ -118,7 +119,7 @@ const Service: NextPage = () => {
             </div>
             <div className="hidden md:block md:col-span-3 bg-white py-2 px-4 rounded-xl shadow-md"></div>
           </div>
-        </div>
+        </Container>
       </section>
     </Layout>
   )
