@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useState } from 'react'
 
 import Layout from '@/components/Layout'
 
@@ -19,10 +20,47 @@ import partnersDLCLink from '@public/img/home/partners.dlcLink.png'
 import partnersStacksFoundation from '@public/img/home/partners.stacksFoundation.png'
 import partnersTAcc from '@public/img/home/partners.tacc.png'
 import partnersWeb3Startup from '@public/img/home/partners.web3Startup.png'
+import classNames from 'classnames'
 
 const Home: NextPage = () => {
+  const [emailAddress, setEmailAddress] = useState<string>('')
+  const [subscribed, setSubscribed] = useState<boolean>(false)
   const { t } = useTranslation(['homepage'])
   const router = useRouter()
+
+  const sendEmail = async () => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (!subscribed && emailAddress && re.test(emailAddress)) {
+      setSubscribed(true)
+      const uri = 'https://api.getwaitlist.com/api/v1/waiter'
+
+      fetch(uri, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: emailAddress,
+          api_key: 'MJOVSE',
+        }),
+      })
+        .then((res) => {
+          if (res.status != 200) {
+            setSubscribed(false)
+            return
+          }
+
+          setEmailAddress('')
+          setSubscribed(true)
+        })
+        .catch((err) => {
+          console.error(err)
+          setSubscribed(false)
+        })
+    }
+  }
 
   return (
     <Layout>
@@ -37,10 +75,26 @@ const Home: NextPage = () => {
               <div className="inline-flex">
                 <input
                   type="email"
-                  className="form-input px-3 py-2 rounded-lg border-gray-300"
-                  placeholder={t('example.email', { ns: 'common' })}
+                  className={classNames(
+                    'form-input px-3 py-2 rounded-lg border-gray-300',
+                    subscribed ? 'cursor-not-allowed' : ''
+                  )}
+                  placeholder={
+                    subscribed
+                      ? `${t('subscribed', { ns: 'common' })} 🎉`
+                      : t('example.email', { ns: 'common' })
+                  }
+                  disabled={subscribed}
+                  autoComplete="off"
+                  value={emailAddress}
+                  onChange={(e) => setEmailAddress(e.target.value)}
                 />
-                <button className="ml-2 px-4 py-2 rounded-lg bg-black font-light text-white select-none cursor-pointer">
+                <button
+                  type="button"
+                  className="ml-2 px-4 py-2 rounded-lg bg-black font-light text-white select-none cursor-pointer disabled:cursor-not-allowed"
+                  disabled={subscribed}
+                  onClick={sendEmail}
+                >
                   {t('joinWaitlist')}
                 </button>
               </div>
