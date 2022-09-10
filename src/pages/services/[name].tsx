@@ -41,7 +41,7 @@ const Service: NextPage = () => {
                 />
               </div>
 
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#24D8FF] select-none">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
                 {t('lowRisk.title')}
               </span>
             </h1>
@@ -49,25 +49,25 @@ const Service: NextPage = () => {
 
           <hr className="my-6"></hr>
 
-          <div className="grid grid-cols-2 md:grid-cols-11 gap-4 text-center">
-            <div className="md:col-span-2 bg-white py-2 px-3 rounded-xl shadow-md">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-11 gap-4 text-center">
+            <div className="lg:col-span-2 bg-white py-2 px-3 rounded-xl shadow-md">
               <p>{t('apy.title')}</p>
               <p className="font-bold">
                 <span className="text-3xl tracking-wider">3.1</span>%
               </p>
             </div>
-            <div className="md:col-span-2 bg-white py-2 px-3 rounded-xl shadow-md">
+            <div className="lg:col-span-2 bg-white py-2 px-3 rounded-xl shadow-md">
               <p>{t('period.title')}</p>
               <p className="font-bold">
                 <span className="text-3xl tracking-wider">1</span>week
               </p>
             </div>
-            <div className="md:col-span-4 bg-white py-2 px-3 rounded-xl shadow-md">
+            <div className="lg:col-span-4 bg-white py-2 px-3 rounded-xl shadow-md">
               <p>{t('amount.title')}</p>
-              <div className="mt-2 h-8 flex justify-center gap-2 text-[#7B95AF] font-medium">
+              <div className="mt-2 h-8 flex justify-center gap-2 text-sefo-grayblue font-medium">
                 <button
                   className={classNames(
-                    'shrink-0 w-8 flex justify-center items-center border-2 border-[#7B95AF] rounded-lg',
+                    'shrink-0 w-8 flex justify-center items-center border-2 border-sefo-grayblue rounded-lg',
                     `${
                       Math.abs(investAmount - 0.01) < 0.005
                         ? 'cursor-not-allowed'
@@ -86,12 +86,12 @@ const Service: NextPage = () => {
                   <FontAwesomeIcon className="w-3" icon={faMinus} />
                 </button>
 
-                <div className="flex justify-center items-center px-4 border-2 border-[#7B95AF] rounded-lg select-none">
+                <div className="flex justify-center items-center px-4 border-2 border-sefo-grayblue rounded-lg select-none">
                   {Math.round(investAmount * 100) / 100} BTC
                 </div>
 
                 <button
-                  className="shrink-0 w-8 flex justify-center items-center border-2 border-[#7B95AF] rounded-lg"
+                  className="shrink-0 w-8 flex justify-center items-center border-2 border-sefo-grayblue rounded-lg"
                   onClick={() => {
                     setInvestAmount((prev) => prev + 0.01)
                   }}
@@ -100,16 +100,16 @@ const Service: NextPage = () => {
                 </button>
               </div>
             </div>
-            <div className="md:col-span-3 bg-white py-2 px-3 rounded-xl shadow-md">
+            <div className="lg:col-span-3 bg-white py-2 px-3 rounded-xl shadow-md">
               <p>{t('expiration.title')}: 9.22.2022</p>
-              <button className="mt-2 w-full bg-[#F2A900] py-1 rounded-lg font-semibold text-white">
+              <button className="mt-2 w-full bg-sefo-orange py-1 rounded-lg font-semibold text-white">
                 {t('subscribe', { ns: 'common' })}
               </button>
             </div>
           </div>
 
-          <div className="mt-4 grid md:grid-cols-11 gap-4 text-center">
-            <div className="col-span-8 bg-white py-2 px-4 rounded-xl shadow-md text-left">
+          <div className="mt-4 grid grid-cols-1 lg:grid-cols-11 gap-4">
+            <div className="lg:col-span-8 bg-white py-2 px-4 rounded-xl shadow-md text-left">
               <h3 className="text-xl font-bold">{t('explanation.title')}</h3>
               <p className="mt-2 mb-6">{t('explanation.description')}</p>
               <Image
@@ -117,7 +117,77 @@ const Service: NextPage = () => {
                 alt={t('explanation.description')}
               />
             </div>
-            <div className="hidden md:block md:col-span-3 bg-white py-2 px-4 rounded-xl shadow-md"></div>
+
+            <div className="lg:col-span-3 bg-white py-2 px-4 rounded-xl shadow-md">
+              <div className="flex flex-col h-full">
+                <h3 className="text-xl font-bold">{t('moreInfo.title')}</h3>
+                <div className="my-2 grow text-sm text-sefo-grayblue">
+                  <div>
+                    <div className="flex justify-between py-1">
+                      <span>{t('moreInfo.valueDate')}</span>
+                      <span className="text-black text-right">
+                        2022/09/12 00:00
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between py-1">
+                      <span>{t('moreInfo.expDate')}</span>
+                      <span className="text-black text-right">
+                        2022/12/12 23:59
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between py-1">
+                      <span>{t('moreInfo.settlementCycle')}</span>
+                      <span className="text-black text-right">
+                        {t('daily')}
+                      </span>
+                    </div>
+
+                    <div className="flex justify-between py-1">
+                      <span>{t('moreInfo.currency')}</span>
+                      <span className="text-black text-right">BTC</span>
+                    </div>
+
+                    <div className="flex justify-between py-1">
+                      <span>{t('moreInfo.renewable')}</span>
+                      <span className="text-black text-right">{t('yes')}</span>
+                    </div>
+                  </div>
+
+                  <div className="py-1">
+                    <div className="flex justify-between py-2 border-y border-sefo-lightgray">
+                      <span>{t('moreInfo.perUnit')}</span>
+                      <span className="text-black text-right">0.01 BTC</span>
+                    </div>
+                  </div>
+
+                  <div className="py-1">
+                    <p className="pb-1 font-bold">
+                      {t('moreInfo.apyTierRate')}
+                    </p>
+                    <div className="flex justify-between py-1">
+                      <span>0-100 BTC</span>
+                      <span className="text-black text-right">3.1 %</span>
+                    </div>
+
+                    <div className="flex justify-between py-1">
+                      <span>100-300 BTC</span>
+                      <span className="text-black text-right">2.9 %</span>
+                    </div>
+
+                    <div className="flex justify-between py-1">
+                      <span>{'>'} 300 BTC</span>
+                      <span className="text-black text-right">2.0 %</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-sm text-sefo-grayblue">
+                  {t('moreInfo.description')}
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>

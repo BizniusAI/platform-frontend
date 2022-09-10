@@ -173,7 +173,7 @@ const Home: NextPage = () => {
       <section className="py-12">
         <Container>
           <div className="flex justify-center">
-            <h2 className="px-5 py-2 rounded text-2xl text-white font-bold bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+            <h2 className="px-5 py-2 rounded text-2xl text-white font-bold bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
               {t('investmentIntro.title')}
             </h2>
           </div>
@@ -183,13 +183,13 @@ const Home: NextPage = () => {
               <div className="col-span-3">
                 <div className="flex gap-4 items-center">
                   <div className="w-10 shrink-0">
-                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold select-none">
+                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-sefo-purple to-sefo-blue text-white text-2xl font-semibold select-none">
                       1
                     </div>
                   </div>
 
                   <h2 className="text-2xl font-bold">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step1.title')}
                     </span>
                   </h2>
@@ -224,13 +224,13 @@ const Home: NextPage = () => {
                 <div className="col-span-3">
                   <div className="flex gap-4 items-center">
                     <div className="w-10 shrink-0">
-                      <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold select-none">
+                      <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-sefo-purple to-sefo-blue text-white text-2xl font-semibold select-none">
                         2
                       </div>
                     </div>
 
                     <h2 className="text-2xl font-bold">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                         {t('investmentIntro.step2.title')}
                       </span>
                     </h2>
@@ -246,12 +246,12 @@ const Home: NextPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 pl-14">
                 <div
-                  className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#24D8FF] cursor-pointer"
+                  className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-lightblue cursor-pointer"
                   onClick={() => router.push('/services/low-risk')}
                 >
                   <div className="w-full p-4 rounded-[1.25rem] bg-white">
                     <h3 className="text-3xl sm:text-4xl font-bold text-center">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#24D8FF] select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
                         {t('lowRisk.title', { ns: 'services' })}
                       </span>
                     </h3>
@@ -274,10 +274,10 @@ const Home: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#7F25E1] cursor-not-allowed">
+                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-purple cursor-not-allowed">
                   <div className="w-full p-4 rounded-[1.25rem] bg-white">
                     <h3 className="text-3xl sm:text-4xl font-bold text-center">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#7F25E1] select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-purple select-none">
                         {t('highRisk.title', { ns: 'services' })}
                       </span>
                     </h3>
@@ -305,13 +305,13 @@ const Home: NextPage = () => {
               <div className="col-span-3">
                 <div className="flex gap-4 items-center">
                   <div className="w-10 shrink-0">
-                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold select-none">
+                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-sefo-purple to-sefo-blue text-white text-2xl font-semibold select-none">
                       3
                     </div>
                   </div>
 
                   <h2 className="text-2xl font-bold">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step3.title')}
                     </span>
                   </h2>
