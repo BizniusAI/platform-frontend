@@ -1,5 +1,5 @@
 export const languages: TLanguages = {
-  en: 'English',
+  en: 'EN',
   'zh-hant': '繁體中文',
 }
 

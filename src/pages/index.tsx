@@ -65,113 +65,115 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <Container className="overflow-hidden">
-        <section className="relative md:grid md:grid-cols-5 items-center pt-4 pb-12">
-          <div className="col-span-3 relative">
-            <div>
-              <h1 className="mt-2 font-bold text-3xl text-center md:text-left sm:text-4xl sm:leading-[3.5rem] select-none">
-                {t('main.slogan')}
-              </h1>
+      <div className="-mt-16 flex flex-col w-full h-screen">
+        <Container className="pt-16 grow overflow-hidden">
+          <section className="h-full relative md:grid md:grid-cols-5 items-center py-8">
+            <div className="col-span-3 relative">
+              <div>
+                <h1 className="mt-2 md:max-w-[29rem] font-bold text-3xl text-center md:text-left sm:text-4xl sm:leading-[3.5rem] select-none">
+                  {t('main.slogan')}
+                </h1>
 
-              <div className="mt-8 md:mt-12 flex justify-center md:justify-start">
-                <div className="inline-flex">
-                  <input
-                    type="email"
-                    className={classNames(
-                      'form-input px-3 py-2 rounded-lg border-gray-300',
-                      subscribed ? 'cursor-not-allowed' : ''
-                    )}
-                    placeholder={
-                      subscribed
-                        ? `${t('subscribed', { ns: 'common' })} 🎉`
-                        : t('example.email', { ns: 'common' })
-                    }
-                    disabled={subscribed}
-                    autoComplete="off"
-                    value={emailAddress}
-                    onChange={(e) => setEmailAddress(e.target.value)}
+                <div className="mt-8 md:mt-12 flex justify-center md:justify-start">
+                  <div className="inline-flex">
+                    <input
+                      type="email"
+                      className={classNames(
+                        'form-input px-3 py-2 rounded-lg border-gray-300',
+                        subscribed ? 'cursor-not-allowed' : ''
+                      )}
+                      placeholder={
+                        subscribed
+                          ? `${t('subscribed', { ns: 'common' })} 🎉`
+                          : t('example.email', { ns: 'common' })
+                      }
+                      disabled={subscribed}
+                      autoComplete="off"
+                      value={emailAddress}
+                      onChange={(e) => setEmailAddress(e.target.value)}
+                    />
+                    <button
+                      type="button"
+                      className="ml-2 px-4 py-2 rounded-lg bg-black font-light text-white select-none cursor-pointer disabled:cursor-not-allowed"
+                      disabled={subscribed}
+                      onClick={sendEmail}
+                    >
+                      {t('joinWaitlist')}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -top-12 -left-12 w-44 h-44 bg-blue-radial"></div>
+            </div>
+
+            <div className="hidden md:block col-span-2">
+              <div className="relative h-full">
+                <Image
+                  src={mainBitcoin}
+                  layout="responsive"
+                  alt={t('investmentIntro.step3.title')}
+                />
+              </div>
+            </div>
+
+            <div className="absolute mx-6 sm:mx-24 -bottom-40 left-12 sm:left-6 md:left-0 w-52 h-52 bg-blue-radial"></div>
+          </section>
+        </Container>
+
+        <section className="bg-gray-50 py-6 pb-12 z-10">
+          <Container>
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-12">
+              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="col-span-2 flex items-center">
+                  <Image
+                    src={featuresBtcSupport}
+                    alt={t('features.btcSupport')}
                   />
-                  <button
-                    type="button"
-                    className="ml-2 px-4 py-2 rounded-lg bg-black font-light text-white select-none cursor-pointer disabled:cursor-not-allowed"
-                    disabled={subscribed}
-                    onClick={sendEmail}
-                  >
-                    {t('joinWaitlist')}
-                  </button>
+                </div>
+                <div className="col-span-3 flex items-center">
+                  <p className="font-bold text-center">
+                    {t('features.btcSupport')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="col-span-2 flex items-center">
+                  <Image
+                    src={featuresNonCustodial}
+                    alt={t('features.nonCustodial')}
+                  />
+                </div>
+                <div className="col-span-3 flex items-center">
+                  <p className="font-bold text-center">
+                    {t('features.nonCustodial')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="col-span-2 flex items-center">
+                  <Image
+                    src={featuresEasyAndNoKyc}
+                    alt={t('features.easyAndNoKyc')}
+                  />
+                </div>
+                <div className="col-span-3 flex items-center">
+                  <p className="font-bold text-center">
+                    {t('features.easyAndNoKyc')}
+                  </p>
                 </div>
               </div>
             </div>
-
-            <div className="absolute -top-12 -left-12 w-44 h-44 bg-blue-radial"></div>
-          </div>
-
-          <div className="hidden md:block col-span-2">
-            <div className="relative h-full">
-              <Image
-                src={mainBitcoin}
-                layout="responsive"
-                alt={t('investmentIntro.step3.title')}
-              />
-            </div>
-          </div>
-
-          <div className="absolute mx-6 sm:mx-24 -bottom-40 left-12 sm:left-6 md:left-0 w-52 h-52 bg-blue-radial"></div>
+          </Container>
         </section>
-      </Container>
-
-      <section className="bg-gray-50 mx-auto py-6 pb-12 z-10">
-        <Container>
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-12">
-            <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-              <div className="col-span-2 flex items-center">
-                <Image
-                  src={featuresBtcSupport}
-                  alt={t('features.btcSupport')}
-                />
-              </div>
-              <div className="col-span-3 flex items-center">
-                <p className="font-bold text-center">
-                  {t('features.btcSupport')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-              <div className="col-span-2 flex items-center">
-                <Image
-                  src={featuresNonCustodial}
-                  alt={t('features.nonCustodial')}
-                />
-              </div>
-              <div className="col-span-3 flex items-center">
-                <p className="font-bold text-center">
-                  {t('features.nonCustodial')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-              <div className="col-span-2 flex items-center">
-                <Image
-                  src={featuresEasyAndNoKyc}
-                  alt={t('features.easyAndNoKyc')}
-                />
-              </div>
-              <div className="col-span-3 flex items-center">
-                <p className="font-bold text-center">
-                  {t('features.easyAndNoKyc')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      </div>
 
       <section className="py-12">
         <Container>
           <div className="flex justify-center">
-            <h2 className="px-5 py-2 rounded text-2xl text-white font-bold bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+            <h2 className="px-5 py-2 rounded text-2xl text-white font-bold bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
               {t('investmentIntro.title')}
             </h2>
           </div>
@@ -181,22 +183,28 @@ const Home: NextPage = () => {
               <div className="col-span-3">
                 <div className="flex gap-4 items-center">
                   <div className="w-10 shrink-0">
-                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold select-none">
+                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-sefo-purple to-sefo-blue text-white text-2xl font-semibold select-none">
                       1
                     </div>
                   </div>
 
                   <h2 className="text-2xl font-bold">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step1.title')}
                     </span>
                   </h2>
                 </div>
 
-                <div className="mt-1 pl-14">
-                  <p className="font-medium">
-                    {t('investmentIntro.step1.content')}
-                  </p>
+                <div className="mt-1 pl-14 font-medium">
+                  <p>{t('investmentIntro.step1.content')}</p>
+                  <ul className="ml-4 list-disc">
+                    <li>
+                      Tutorial -{'>'}{' '}
+                      <span className="underline cursor-pointer">
+                        How to get Bitcoin into your wallet?
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -216,13 +224,13 @@ const Home: NextPage = () => {
                 <div className="col-span-3">
                   <div className="flex gap-4 items-center">
                     <div className="w-10 shrink-0">
-                      <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold select-none">
+                      <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-sefo-purple to-sefo-blue text-white text-2xl font-semibold select-none">
                         2
                       </div>
                     </div>
 
                     <h2 className="text-2xl font-bold">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                         {t('investmentIntro.step2.title')}
                       </span>
                     </h2>
@@ -238,25 +246,25 @@ const Home: NextPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 pl-14">
                 <div
-                  className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#24D8FF] cursor-pointer"
+                  className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-lightblue cursor-pointer"
                   onClick={() => router.push('/services/low-risk')}
                 >
                   <div className="w-full p-4 rounded-[1.25rem] bg-white">
                     <h3 className="text-3xl sm:text-4xl font-bold text-center">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#24D8FF] select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
                         {t('lowRisk.title', { ns: 'services' })}
                       </span>
                     </h3>
 
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('apy.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">3.1</span>%
                         </p>
                       </div>
 
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('period.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">1</span>week
@@ -266,22 +274,22 @@ const Home: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-[#F2A900] to-[#7F25E1] cursor-not-allowed">
+                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-purple cursor-not-allowed">
                   <div className="w-full p-4 rounded-[1.25rem] bg-white">
                     <h3 className="text-3xl sm:text-4xl font-bold text-center">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F2A900] to-[#7F25E1] select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-purple select-none">
                         {t('highRisk.title', { ns: 'services' })}
                       </span>
                     </h3>
 
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('apy.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">5.2</span>%
                         </p>
                       </div>
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('period.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">1</span>week
@@ -297,13 +305,13 @@ const Home: NextPage = () => {
               <div className="col-span-3">
                 <div className="flex gap-4 items-center">
                   <div className="w-10 shrink-0">
-                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-[#7F25E1] to-[#00AEF8] text-white text-2xl font-semibold select-none">
+                    <div className="h-10 flex justify-center items-center rounded-full bg-gradient-to-br from-sefo-purple to-sefo-blue text-white text-2xl font-semibold select-none">
                       3
                     </div>
                   </div>
 
                   <h2 className="text-2xl font-bold">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step3.title')}
                     </span>
                   </h2>

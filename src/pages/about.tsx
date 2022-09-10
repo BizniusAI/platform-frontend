@@ -40,51 +40,51 @@ const Service: NextPage = () => {
             {t('team')}
           </h2>
 
-          <div className="py-8 flex flex-wrap justify-center gap-4">
-            <div className="basis-1/3 lg:basis-1/4 p-6 rounded shadow-md flex flex-col items-center gap-2">
+          <div className="py-8 grid grid-cols-4 md:grid-cols-6 justify-items-center gap-4">
+            <div className="col-span-2 p-6 rounded shadow-md flex flex-col items-center gap-2">
               <Image src={profileAidan} alt="Aidan, CEO" />
 
-              <p className="text-xl font-bold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+              <p className="text-center text-xl font-bold">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                   Aidan, CEO
                 </span>
               </p>
               <div className="flex-none">
-                <p className="text-sm">
+                <p className="text-center text-sm">
                   SDE & PM @ Microsoft<br></br>
-                  Information management, NTU
+                  IM, NTU
                 </p>
               </div>
             </div>
 
-            <div className="basis-1/3 lg:basis-1/4 p-6 rounded shadow-md flex flex-col items-center gap-2">
+            <div className="col-span-2 p-6 rounded shadow-md flex flex-col items-center gap-2">
               <Image src={profileHannibal} alt="Aidan, CEO" />
 
-              <p className="text-xl font-bold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+              <p className="text-center text-xl font-bold">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                   Hannibal, CMO
                 </span>
               </p>
               <div className="flex-none">
-                <p className="text-sm">
+                <p className="text-center text-sm">
                   Co-founder & CEO @ EmoMask<br></br>
                   Chair Assistant @ ACM
                 </p>
               </div>
             </div>
 
-            <div className="basis-1/3 lg:basis-1/4 p-6 rounded shadow-md flex flex-col items-center gap-2">
+            <div className="col-start-2 col-span-2 md:col-span-2 p-6 rounded shadow-md flex flex-col items-center gap-2">
               <Image src={profileAndy} alt="Aidan, CEO" />
 
-              <p className="text-xl font-bold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#7F25E1] to-[#00AEF8] select-none">
+              <p className="text-center text-xl font-bold">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                   Andy, Engineer
                 </span>
               </p>
               <div className="flex-none">
-                <p className="text-sm">
+                <p className="text-center text-sm">
                   Co-founder & CTO @ Blockore<br></br>
-                  Information Management, NTUST
+                  IM, NTUST
                 </p>
               </div>
             </div>

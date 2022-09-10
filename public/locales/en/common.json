@@ -1,11 +1,20 @@
 {
-  "brand.name": "Lucid Lake",
-  "title": "Lucid Lake",
+  "brand.name": "Sefo Finance Lake",
+  "title": "Sefo Finance Lake",
   "learnMore": "Learn More",
   "login": "Login",
   "register": "Register",
   "subscribe": "Subscribe",
   "subscribed": "Subscribed",
+  "yes": "Yes",
+  "no": "No",
+  "daily": "Daily",
+  "monthly": "Monthly",
+  "yearly": "Yearly",
+  "walletBalance": "Wallet Balance",
+  "amount": "Amount",
+  "balance": "Balance",
+  "success": "Success",
 
   "example.email": "xxx@gmail.com",
 
