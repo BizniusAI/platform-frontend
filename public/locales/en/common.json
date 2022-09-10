@@ -6,6 +6,15 @@
   "register": "Register",
   "subscribe": "Subscribe",
   "subscribed": "Subscribed",
+  "yes": "Yes",
+  "no": "No",
+  "daily": "Daily",
+  "monthly": "Monthly",
+  "yearly": "Yearly",
+  "walletBalance": "Wallet Balance",
+  "amount": "Amount",
+  "balance": "Balance",
+  "success": "Success",
 
   "example.email": "xxx@gmail.com",
 

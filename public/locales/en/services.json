@@ -15,13 +15,11 @@
   "moreInfo.perUnit": "Per Unit",
   "moreInfo.apyTierRate": "APY Tier Rate",
 
+  "subscribe.title": "Subscribe to",
+  "subscribe.disclaimer.title": "Disclaimer",
+  "subscribe.agreement": "I have read and I agree to Disclaimer & Service Agreement",
+
   "lowRisk.title": "Low Risk Vault",
 
-  "highRisk.title": "High Risk Vault",
-
-  "yes": "Yes",
-  "no": "No",
-  "daily": "Daily",
-  "monthly": "Monthly",
-  "yearly": "Yearly"
+  "highRisk.title": "High Risk Vault"
 }

@@ -17,11 +17,5 @@
 
   "lowRisk.title": "Low Risk Vault",
 
-  "highRisk.title": "High Risk Vault",
-
-  "yes": "Yes",
-  "no": "No",
-  "daily": "Daily",
-  "monthly": "Monthly",
-  "yearly": "Yearly"
+  "highRisk.title": "High Risk Vault"
 }

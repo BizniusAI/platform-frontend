@@ -13,7 +13,11 @@ module.exports = {
         black: '#1E2328',
         sefo: {
           blue: '#00AEF8',
-          grayblue: '#7B95AF',
+          grayblue: {
+            200: '#EDF1F6',
+            500: '#7B95AF',
+            DEFAULT: '#7B95AF',
+          },
           lightblue: '#24D8FF',
           lightgray: '#DDE4EB',
           orange: '#F2A900',
