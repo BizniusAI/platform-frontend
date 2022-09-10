@@ -40,6 +40,36 @@ a {
   filter: blur(1.5rem);
 }
 
+.bg-yellow-radial {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(242, 169, 0, 0.6) 0%,
+    rgba(242, 169, 0, 0) 100%
+  );
+  filter: blur(1.5rem);
+}
+
+.bg-purple-radial {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(127, 37, 225, 0.3) 0%,
+    rgba(127, 37, 225, 0) 100%
+  );
+  filter: blur(1.5rem);
+}
+
+.container {
+  width: 100%;
+  max-width: 1366px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .hamburger-btn {
   width: 20px;
   height: 24px;
@@ -137,4 +167,14 @@ a {
 .tooltip-wrapper:hover .tooltip {
   opacity: 1;
   pointer-events: auto;
+}
+
+.wrapper {
+  width: 80%;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: 90%;
+  }
 }

@@ -50,7 +50,7 @@ const Layout = ({ children, title = '', metadata }: TProps): JSX.Element => {
               : 'http://localhost/img/fb-sharing-cover.png'
           }
         />
-        <meta property="og:site_name" content="Shabuu" />
+        <meta property="og:site_name" content={t('brand.name')} />
         <meta
           property="og:description"
           content={metadata?.description ? metadata.description : ''}
