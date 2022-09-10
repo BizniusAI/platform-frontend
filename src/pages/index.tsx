@@ -65,108 +65,110 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <Container className="overflow-hidden">
-        <section className="relative md:grid md:grid-cols-5 items-center pt-4 pb-12">
-          <div className="col-span-3 relative">
-            <div>
-              <h1 className="mt-2 font-bold text-3xl text-center md:text-left sm:text-4xl sm:leading-[3.5rem] select-none">
-                {t('main.slogan')}
-              </h1>
+      <div className="-mt-16 flex flex-col w-full h-screen">
+        <Container className="pt-16 grow overflow-hidden">
+          <section className="h-full relative md:grid md:grid-cols-5 items-center py-8">
+            <div className="col-span-3 relative">
+              <div>
+                <h1 className="mt-2 md:max-w-[29rem] font-bold text-3xl text-center md:text-left sm:text-4xl sm:leading-[3.5rem] select-none">
+                  {t('main.slogan')}
+                </h1>
 
-              <div className="mt-8 md:mt-12 flex justify-center md:justify-start">
-                <div className="inline-flex">
-                  <input
-                    type="email"
-                    className={classNames(
-                      'form-input px-3 py-2 rounded-lg border-gray-300',
-                      subscribed ? 'cursor-not-allowed' : ''
-                    )}
-                    placeholder={
-                      subscribed
-                        ? `${t('subscribed', { ns: 'common' })} 🎉`
-                        : t('example.email', { ns: 'common' })
-                    }
-                    disabled={subscribed}
-                    autoComplete="off"
-                    value={emailAddress}
-                    onChange={(e) => setEmailAddress(e.target.value)}
+                <div className="mt-8 md:mt-12 flex justify-center md:justify-start">
+                  <div className="inline-flex">
+                    <input
+                      type="email"
+                      className={classNames(
+                        'form-input px-3 py-2 rounded-lg border-gray-300',
+                        subscribed ? 'cursor-not-allowed' : ''
+                      )}
+                      placeholder={
+                        subscribed
+                          ? `${t('subscribed', { ns: 'common' })} 🎉`
+                          : t('example.email', { ns: 'common' })
+                      }
+                      disabled={subscribed}
+                      autoComplete="off"
+                      value={emailAddress}
+                      onChange={(e) => setEmailAddress(e.target.value)}
+                    />
+                    <button
+                      type="button"
+                      className="ml-2 px-4 py-2 rounded-lg bg-black font-light text-white select-none cursor-pointer disabled:cursor-not-allowed"
+                      disabled={subscribed}
+                      onClick={sendEmail}
+                    >
+                      {t('joinWaitlist')}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -top-12 -left-12 w-44 h-44 bg-blue-radial"></div>
+            </div>
+
+            <div className="hidden md:block col-span-2">
+              <div className="relative h-full">
+                <Image
+                  src={mainBitcoin}
+                  layout="responsive"
+                  alt={t('investmentIntro.step3.title')}
+                />
+              </div>
+            </div>
+
+            <div className="absolute mx-6 sm:mx-24 -bottom-40 left-12 sm:left-6 md:left-0 w-52 h-52 bg-blue-radial"></div>
+          </section>
+        </Container>
+
+        <section className="bg-gray-50 py-6 pb-12 z-10">
+          <Container>
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-12">
+              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="col-span-2 flex items-center">
+                  <Image
+                    src={featuresBtcSupport}
+                    alt={t('features.btcSupport')}
                   />
-                  <button
-                    type="button"
-                    className="ml-2 px-4 py-2 rounded-lg bg-black font-light text-white select-none cursor-pointer disabled:cursor-not-allowed"
-                    disabled={subscribed}
-                    onClick={sendEmail}
-                  >
-                    {t('joinWaitlist')}
-                  </button>
+                </div>
+                <div className="col-span-3 flex items-center">
+                  <p className="font-bold text-center">
+                    {t('features.btcSupport')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="col-span-2 flex items-center">
+                  <Image
+                    src={featuresNonCustodial}
+                    alt={t('features.nonCustodial')}
+                  />
+                </div>
+                <div className="col-span-3 flex items-center">
+                  <p className="font-bold text-center">
+                    {t('features.nonCustodial')}
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="col-span-2 flex items-center">
+                  <Image
+                    src={featuresEasyAndNoKyc}
+                    alt={t('features.easyAndNoKyc')}
+                  />
+                </div>
+                <div className="col-span-3 flex items-center">
+                  <p className="font-bold text-center">
+                    {t('features.easyAndNoKyc')}
+                  </p>
                 </div>
               </div>
             </div>
-
-            <div className="absolute -top-12 -left-12 w-44 h-44 bg-blue-radial"></div>
-          </div>
-
-          <div className="hidden md:block col-span-2">
-            <div className="relative h-full">
-              <Image
-                src={mainBitcoin}
-                layout="responsive"
-                alt={t('investmentIntro.step3.title')}
-              />
-            </div>
-          </div>
-
-          <div className="absolute mx-6 sm:mx-24 -bottom-40 left-12 sm:left-6 md:left-0 w-52 h-52 bg-blue-radial"></div>
+          </Container>
         </section>
-      </Container>
-
-      <section className="bg-gray-50 mx-auto py-6 pb-12 z-10">
-        <Container>
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-12">
-            <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-              <div className="col-span-2 flex items-center">
-                <Image
-                  src={featuresBtcSupport}
-                  alt={t('features.btcSupport')}
-                />
-              </div>
-              <div className="col-span-3 flex items-center">
-                <p className="font-bold text-center">
-                  {t('features.btcSupport')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-              <div className="col-span-2 flex items-center">
-                <Image
-                  src={featuresNonCustodial}
-                  alt={t('features.nonCustodial')}
-                />
-              </div>
-              <div className="col-span-3 flex items-center">
-                <p className="font-bold text-center">
-                  {t('features.nonCustodial')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-              <div className="col-span-2 flex items-center">
-                <Image
-                  src={featuresEasyAndNoKyc}
-                  alt={t('features.easyAndNoKyc')}
-                />
-              </div>
-              <div className="col-span-3 flex items-center">
-                <p className="font-bold text-center">
-                  {t('features.easyAndNoKyc')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      </div>
 
       <section className="py-12">
         <Container>
@@ -193,10 +195,16 @@ const Home: NextPage = () => {
                   </h2>
                 </div>
 
-                <div className="mt-1 pl-14">
-                  <p className="font-medium">
-                    {t('investmentIntro.step1.content')}
-                  </p>
+                <div className="mt-1 pl-14 font-medium">
+                  <p>{t('investmentIntro.step1.content')}</p>
+                  <ul className="ml-4 list-disc">
+                    <li>
+                      Tutorial -{'>'}{' '}
+                      <span className="underline cursor-pointer">
+                        How to get Bitcoin into your wallet?
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -249,14 +257,14 @@ const Home: NextPage = () => {
                     </h3>
 
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('apy.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">3.1</span>%
                         </p>
                       </div>
 
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('period.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">1</span>week
@@ -275,13 +283,13 @@ const Home: NextPage = () => {
                     </h3>
 
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('apy.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">5.2</span>%
                         </p>
                       </div>
-                      <div className="p-2 rounded-xl shadow-md">
+                      <div className="px-2 py-3 rounded-xl shadow-md">
                         <p>{t('period.title', { ns: 'services' })}</p>
                         <p className="font-bold">
                           <span className="text-3xl tracking-wider">1</span>week
