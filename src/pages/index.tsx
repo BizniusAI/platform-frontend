@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -7,6 +8,7 @@ import { useState } from 'react'
 
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
+import { defaultLocales } from '@/constants'
 
 // images
 import mainBitcoin from '@public/img/home/main.bitcoin.png'
@@ -21,7 +23,6 @@ import partnersDLCLink from '@public/img/home/partners.dlcLink.png'
 import partnersStacksFoundation from '@public/img/home/partners.stacksFoundation.png'
 import partnersTAcc from '@public/img/home/partners.tacc.png'
 import partnersWeb3Startup from '@public/img/home/partners.web3Startup.png'
-import classNames from 'classnames'
 
 const Home: NextPage = () => {
   const [emailAddress, setEmailAddress] = useState<string>('')
@@ -426,12 +427,9 @@ export const getStaticProps: GetStaticProps = async ({ locale = '' }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, [
+        ...defaultLocales,
         'homepage',
-        'menu',
-        'common',
-        'services',
       ])),
-      // Will be passed to the page component as props
     },
   }
 }

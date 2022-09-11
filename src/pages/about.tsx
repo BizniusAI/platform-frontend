@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import { defaultLocales } from '@/constants'
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 
@@ -98,8 +99,7 @@ const Service: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale = '' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['menu', 'common', 'about'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, [...defaultLocales, 'about'])),
     },
   }
 }

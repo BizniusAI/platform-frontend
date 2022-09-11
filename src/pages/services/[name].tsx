@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
+import { defaultLocales } from '@/constants'
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 
@@ -347,8 +348,7 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ locale = '' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['menu', 'common', 'services'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, [...defaultLocales])),
     },
   }
 }

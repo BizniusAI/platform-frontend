@@ -29,18 +29,18 @@ const Header = (): JSX.Element => {
       <Container>
         <nav className="flex justify-between md:justify-start items-center gap-x-8 py-3 h-16">
           <div className="flex w-24 h-full order-2 md:order-1 cursor-pointer">
-            <Link href="/" passHref>
-              <span className="relative w-full h-full">
+            <Link href="/">
+              <a className="relative w-full h-full">
                 <Image
                   src={logo}
                   layout="fill"
                   alt={`${t('brand.name', { ns: 'common' })} Logo`}
                 />
-              </span>
+              </a>
             </Link>
           </div>
 
-          <div className="hidden md:flex gap-x-8 items-center justify-between tracking-wider font-light md:order-2">
+          <div className="hidden md:block md:order-2">
             <DesktopMenu />
           </div>
           <div className="hidden md:block md:grow md:order-3"></div>

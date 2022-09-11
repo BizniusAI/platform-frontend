@@ -9,6 +9,6 @@ type TLanguages = {
 
 type TMenu = {
   name: string
-  endpoint: string
-  children?: TMenu[]
+  url: string
+  submenu?: TMenu[]
 }
