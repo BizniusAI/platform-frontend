@@ -6,15 +6,20 @@ export const languages: TLanguages = {
 export const menuLinks: TMenu[] = [
   {
     name: 'service',
-    endpoint: '/services/low-risk',
-    // children: [],
+    url: '/services',
+    submenu: [
+      { name: 'lowRisk', url: '/services/low-risk' },
+      { name: 'highRisk', url: '/services/high-risk' },
+    ],
   },
   {
     name: 'about',
-    endpoint: '/about',
+    url: '/about',
   },
   {
     name: 'news',
-    endpoint: '/news',
+    url: '/news',
   },
 ]
+
+export const defaultLocales = ['menu', 'common', 'services']
