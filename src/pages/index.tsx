@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
 import Container from '@/components/Container'
+import { H1, H2 } from '@/components/Headings'
 import Layout from '@/components/Layout'
 import { defaultLocales } from '@/constants'
 
@@ -70,9 +71,9 @@ const Home: NextPage = () => {
           <section className="h-full relative md:grid md:grid-cols-5 items-center py-8">
             <div className="col-span-3 relative">
               <div>
-                <h1 className="mt-2 md:max-w-[29rem] font-bold text-3xl text-center md:text-left sm:text-4xl sm:leading-[3.5rem] select-none">
+                <H1 className="mt-2 md:max-w-[29rem] text-center md:text-left sm:leading-[3.5rem]">
                   {t('main.slogan')}
-                </h1>
+                </H1>
 
                 <div className="mt-8 md:mt-12 flex justify-center md:justify-start">
                   <div className="inline-flex">
@@ -176,9 +177,9 @@ const Home: NextPage = () => {
       <section className="py-12">
         <Container>
           <div className="flex justify-center">
-            <h2 className="px-5 py-2 rounded text-2xl text-white font-bold bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+            <H2 className="px-5 py-2 rounded text-white bg-gradient-to-r from-sefo-purple to-sefo-blue">
               {t('investmentIntro.title')}
-            </h2>
+            </H2>
           </div>
 
           <div className="py-12 flex flex-col gap-12">
@@ -191,11 +192,11 @@ const Home: NextPage = () => {
                     </div>
                   </div>
 
-                  <h2 className="text-2xl font-bold">
+                  <H2>
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step1.title')}
                     </span>
-                  </h2>
+                  </H2>
                 </div>
 
                 <div className="mt-1 pl-14 font-medium">
@@ -231,11 +232,11 @@ const Home: NextPage = () => {
                       </div>
                     </div>
 
-                    <h2 className="text-2xl font-bold">
+                    <H2>
                       <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                         {t('investmentIntro.step2.title')}
                       </span>
-                    </h2>
+                    </H2>
                   </div>
 
                   <div className="mt-1 pl-14">
@@ -251,11 +252,11 @@ const Home: NextPage = () => {
                   <a>
                     <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-lightblue">
                       <div className="w-full p-4 rounded-[1.25rem] bg-white">
-                        <h3 className="text-3xl sm:text-4xl font-bold text-center">
+                        <H1 className="text-center">
                           <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
                             {t('lowRisk.title', { ns: 'services' })}
                           </span>
-                        </h3>
+                        </H1>
 
                         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
                           <div className="px-2 py-3 rounded-xl shadow-md">
@@ -285,11 +286,11 @@ const Home: NextPage = () => {
                   <a>
                     <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-purple">
                       <div className="w-full p-4 rounded-[1.25rem] bg-white">
-                        <h3 className="text-3xl sm:text-4xl font-bold text-center">
+                        <H1 className="text-center">
                           <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-purple select-none">
                             {t('highRisk.title', { ns: 'services' })}
                           </span>
-                        </h3>
+                        </H1>
 
                         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
                           <div className="px-2 py-3 rounded-xl shadow-md">
@@ -325,11 +326,11 @@ const Home: NextPage = () => {
                     </div>
                   </div>
 
-                  <h2 className="text-2xl font-bold">
+                  <H2>
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step3.title')}
                     </span>
-                  </h2>
+                  </H2>
                 </div>
 
                 <div className="mt-1 pl-14">
@@ -355,9 +356,7 @@ const Home: NextPage = () => {
 
       <section className="py-12 bg-white sm:bg-gray-100">
         <Container>
-          <h2 className="text-2xl font-bold text-center select-none">
-            {t('partners.title')}
-          </h2>
+          <H2 className="text-center">{t('partners.title')}</H2>
 
           <div className="grid grid-rows-2 grid-cols-6 gap-4">
             <div className="col-span-2">
@@ -385,9 +384,9 @@ const Home: NextPage = () => {
 
       <section className="py-12">
         <Container>
-          <h2 className="text-2xl font-bold text-center select-none">
+          <H2 className="text-2xl font-bold text-center select-none">
             {t('consultation.title')}
-          </h2>
+          </H2>
 
           <div className="py-12 grid grid-cols-7 gap-4">
             <div className="col-span-full md:col-span-4">
