@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
@@ -200,15 +200,14 @@ const Home: NextPage = () => {
                 </div>
 
                 <div className="mt-1 pl-14 font-medium">
-                  <p>{t('investmentIntro.step1.content')}</p>
-                  <ul className="ml-4 list-disc">
-                    <li>
-                      Tutorial -{'>'}{' '}
-                      <span className="underline cursor-pointer">
-                        How to get Bitcoin into your wallet?
-                      </span>
-                    </li>
-                  </ul>
+                  <Trans i18nKey="investmentIntro.step1.content" ns="homepage">
+                    <p></p>
+                    <ul className="ml-4 list-disc">
+                      <li>
+                        <span className="underline cursor-pointer"></span>
+                      </li>
+                    </ul>
+                  </Trans>
                 </div>
               </div>
 
