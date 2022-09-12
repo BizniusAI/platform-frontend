@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
@@ -28,7 +28,6 @@ const Home: NextPage = () => {
   const [emailAddress, setEmailAddress] = useState<string>('')
   const [subscribed, setSubscribed] = useState<boolean>(false)
   const { t } = useTranslation(['homepage'])
-  const router = useRouter()
 
   const sendEmail = async () => {
     const re =
@@ -248,59 +247,72 @@ const Home: NextPage = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 pl-14">
-                <div
-                  className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-lightblue cursor-pointer"
-                  onClick={() => router.push('/services/low-risk')}
-                >
-                  <div className="w-full p-4 rounded-[1.25rem] bg-white">
-                    <h3 className="text-3xl sm:text-4xl font-bold text-center">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
-                        {t('lowRisk.title', { ns: 'services' })}
-                      </span>
-                    </h3>
+                <Link href="/services/low-risk">
+                  <a>
+                    <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-lightblue">
+                      <div className="w-full p-4 rounded-[1.25rem] bg-white">
+                        <h3 className="text-3xl sm:text-4xl font-bold text-center">
+                          <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
+                            {t('lowRisk.title', { ns: 'services' })}
+                          </span>
+                        </h3>
 
-                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                      <div className="px-2 py-3 rounded-xl shadow-md">
-                        <p>{t('apy.title', { ns: 'services' })}</p>
-                        <p className="font-bold">
-                          <span className="text-3xl tracking-wider">3.1</span>%
-                        </p>
-                      </div>
+                        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                          <div className="px-2 py-3 rounded-xl shadow-md">
+                            <p>{t('apy.title', { ns: 'services' })}</p>
+                            <p className="font-bold">
+                              <span className="text-3xl tracking-wider">
+                                3.1
+                              </span>
+                              %
+                            </p>
+                          </div>
 
-                      <div className="px-2 py-3 rounded-xl shadow-md">
-                        <p>{t('period.title', { ns: 'services' })}</p>
-                        <p className="font-bold">
-                          <span className="text-3xl tracking-wider">1</span>week
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-purple cursor-not-allowed">
-                  <div className="w-full p-4 rounded-[1.25rem] bg-white">
-                    <h3 className="text-3xl sm:text-4xl font-bold text-center">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-purple select-none">
-                        {t('highRisk.title', { ns: 'services' })}
-                      </span>
-                    </h3>
-
-                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                      <div className="px-2 py-3 rounded-xl shadow-md">
-                        <p>{t('apy.title', { ns: 'services' })}</p>
-                        <p className="font-bold">
-                          <span className="text-3xl tracking-wider">5.2</span>%
-                        </p>
-                      </div>
-                      <div className="px-2 py-3 rounded-xl shadow-md">
-                        <p>{t('period.title', { ns: 'services' })}</p>
-                        <p className="font-bold">
-                          <span className="text-3xl tracking-wider">1</span>week
-                        </p>
+                          <div className="px-2 py-3 rounded-xl shadow-md">
+                            <p>{t('period.title', { ns: 'services' })}</p>
+                            <p className="font-bold">
+                              <span className="text-3xl tracking-wider">1</span>
+                              week
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </a>
+                </Link>
+
+                <Link href="/services/high-risk">
+                  <a>
+                    <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-purple">
+                      <div className="w-full p-4 rounded-[1.25rem] bg-white">
+                        <h3 className="text-3xl sm:text-4xl font-bold text-center">
+                          <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-purple select-none">
+                            {t('highRisk.title', { ns: 'services' })}
+                          </span>
+                        </h3>
+
+                        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
+                          <div className="px-2 py-3 rounded-xl shadow-md">
+                            <p>{t('apy.title', { ns: 'services' })}</p>
+                            <p className="font-bold">
+                              <span className="text-3xl tracking-wider">
+                                5.2
+                              </span>
+                              %
+                            </p>
+                          </div>
+                          <div className="px-2 py-3 rounded-xl shadow-md">
+                            <p>{t('period.title', { ns: 'services' })}</p>
+                            <p className="font-bold">
+                              <span className="text-3xl tracking-wider">1</span>
+                              week
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
               </div>
             </div>
 
