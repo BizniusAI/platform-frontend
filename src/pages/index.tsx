@@ -123,8 +123,8 @@ const Home: NextPage = () => {
 
         <section className="bg-gray-50 py-6 md:pb-12 z-10">
           <Container>
-            <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-12">
-              <div className="bg-white px-6 py-4 md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-8 lg:gap-12">
+              <div className="bg-white px-6 py-4 min-h-[6rem] md:min-h-[8rem] md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
                 <div className="relative col-span-2 flex items-center">
                   <Image
                     src={featuresBtcSupport}
@@ -139,7 +139,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white px-6 py-4 md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
+              <div className="bg-white px-6 py-4 min-h-[6rem] md:min-h-[8rem] md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
                 <div className="relative col-span-2 flex items-center">
                   <Image
                     src={featuresNonCustodial}
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white px-6 py-4 md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
+              <div className="bg-white px-6 py-4 min-h-[6rem] md:min-h-[8rem] md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
                 <div className="relative col-span-2 flex items-center">
                   <Image
                     src={featuresEasyAndNoKyc}

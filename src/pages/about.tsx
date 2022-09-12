@@ -20,7 +20,7 @@ const Service: NextPage = () => {
       <section className="bg-gray-50 py-6 pb-12 overflow-hidden">
         <Container>
           <div className="md:px-4 lg:px-16 text-center z-10">
-            <h1 className="mt-2 px-4 md:px-16 lg:px-32 font-bold text-3xl sm:text-4xl sm:leading-[3rem] select-none">
+            <h1 className="mt-2 max-w-[25rem] sm:max-w-[29rem] mx-auto font-bold text-3xl sm:text-4xl sm:leading-[3rem] select-none">
               {t('slogan')}
             </h1>
 
