@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { defaultLocales } from '@/constants'
 import Container from '@/components/Container'
+import { H1, H2 } from '@/components/Headings'
 import Layout from '@/components/Layout'
 
 // images
@@ -20,9 +21,9 @@ const Service: NextPage = () => {
       <section className="bg-gray-50 py-6 pb-12 overflow-hidden">
         <Container>
           <div className="md:px-4 lg:px-16 text-center z-10">
-            <h1 className="mt-2 px-4 md:px-16 lg:px-32 font-bold text-3xl sm:text-4xl sm:leading-[3rem] select-none">
+            <H1 className="mt-2 max-w-[25rem] sm:max-w-[29rem] mx-auto sm:leading-[3rem]">
               {t('slogan')}
-            </h1>
+            </H1>
 
             <Trans i18nKey="description" ns="about">
               <p className="mt-8"></p>
@@ -39,9 +40,7 @@ const Service: NextPage = () => {
 
       <section className="py-6 pb-12">
         <Container>
-          <h2 className="text-2xl font-bold text-center select-none">
-            {t('team')}
-          </h2>
+          <H2 className="text-center">{t('team')}</H2>
 
           <div className="py-8 grid grid-cols-4 md:grid-cols-6 justify-items-center gap-4">
             <div className="col-span-2 p-6 rounded shadow-md flex flex-col items-center gap-2">

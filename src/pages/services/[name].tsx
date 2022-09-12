@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 
 import { defaultLocales } from '@/constants'
 import Container from '@/components/Container'
+import { H1, H3 } from '@/components/Headings'
 import Layout from '@/components/Layout'
 
 // images
@@ -44,10 +45,10 @@ const Service: NextPage = () => {
           {subscribeBtnClicked ? (
             <>
               <div className="bg-white w-1/2 mx-auto p-4 rounded-xl shadow-md">
-                <h3 className="mb-4 text-xl font-bold text-center">
+                <H3 className="mb-4 text-center">
                   {t('subscribe.title')}
                   {` “${t(`${serviceName}.title`)}”`}
-                </h3>
+                </H3>
 
                 <div className="mb-3 bg-sefo-grayblue-200 px-6 py-4 rounded-xl">
                   <h4 className="text-lg text-sefo-grayblue font-bold text-center">
@@ -159,7 +160,7 @@ const Service: NextPage = () => {
           ) : (
             <>
               <div>
-                <h1 className="flex items-center gap-8 text-3xl sm:text-4xl font-bold">
+                <H1 className="flex items-center gap-8">
                   <div className="relative w-16 h-16 shrink-0">
                     <Image
                       src={lowRiskIcon}
@@ -170,7 +171,7 @@ const Service: NextPage = () => {
 
                   <span
                     className={classNames(
-                      'bg-clip-text text-transparent bg-gradient-to-r select-none',
+                      'bg-clip-text text-transparent bg-gradient-to-r',
                       serviceName === 'lowRisk'
                         ? 'from-sefo-orange to-sefo-lightblue'
                         : 'from-sefo-orange to-sefo-purple'
@@ -178,7 +179,7 @@ const Service: NextPage = () => {
                   >
                     {t(`${serviceName}.title`)}
                   </span>
-                </h1>
+                </H1>
               </div>
 
               <hr className="my-6"></hr>
@@ -249,9 +250,7 @@ const Service: NextPage = () => {
 
               <div className="mt-4 grid grid-cols-1 lg:grid-cols-11 gap-4">
                 <div className="lg:col-span-8 bg-white py-2 px-4 rounded-xl shadow-md text-left">
-                  <h3 className="text-xl font-bold">
-                    {t('explanation.title')}
-                  </h3>
+                  <H3>{t('explanation.title')}</H3>
                   <p className="mt-2 mb-6">{t('explanation.description')}</p>
                   <Image
                     src={explanationDescription}
@@ -261,7 +260,7 @@ const Service: NextPage = () => {
 
                 <div className="lg:col-span-3 bg-white py-2 px-4 rounded-xl shadow-md">
                   <div className="flex flex-col h-full">
-                    <h3 className="text-xl font-bold">{t('moreInfo.title')}</h3>
+                    <H3>{t('moreInfo.title')}</H3>
                     <div className="my-2 grow text-sm text-sefo-grayblue">
                       <div>
                         <div className="flex justify-between py-1">
