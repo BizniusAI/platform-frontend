@@ -4,10 +4,11 @@ import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { defaultLocales } from '@/constants'
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 
@@ -30,6 +31,12 @@ const Service: NextPage = () => {
   const { name } = router.query
   const serviceName = serviceNameMapping[String(name)]
 
+  useEffect(() => {
+    setSubscribeBtnClicked(false)
+    setSubscribed(false)
+    setInvestAmount(0.01)
+  }, [router.asPath])
+
   return (
     <Layout title={t(`${serviceName}.title`)}>
       <section className="bg-gray-50 py-6 pb-12 px-4 sm:px-auto">
@@ -39,27 +46,21 @@ const Service: NextPage = () => {
               <div className="bg-white w-1/2 mx-auto p-4 rounded-xl shadow-md">
                 <h3 className="mb-4 text-xl font-bold text-center">
                   {t('subscribe.title')}
-                  {` “${t('lowRisk.title')}”`}
+                  {` “${t(`${serviceName}.title`)}”`}
                 </h3>
 
                 <div className="mb-3 bg-sefo-grayblue-200 px-6 py-4 rounded-xl">
                   <h4 className="text-lg text-sefo-grayblue font-bold text-center">
                     {t('subscribe.disclaimer.title')}
                   </h4>
-                  <ol className="ml-4 list-decimal">
-                    <li>
-                      Subscription cannot be cancelled. However, 100% of your
-                      principal asset is redeemable.
-                    </li>
-                    <li>
-                      APR does not mean the actual or predicted returns in fiat
-                      currency.
-                    </li>
-                    <li>
-                      Refer to SeFo’s platform for the latest annual interest
-                      rate for your renewed subscription.
-                    </li>
-                  </ol>
+
+                  <Trans i18nKey="subscribe.disclaimer.content" ns="services">
+                    <ol className="ml-4 list-decimal">
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ol>
+                  </Trans>
                 </div>
 
                 <div className="mb-3 bg-sefo-grayblue-200 px-6 py-4 rounded-xl">
@@ -167,8 +168,15 @@ const Service: NextPage = () => {
                     />
                   </div>
 
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
-                    {t('lowRisk.title')}
+                  <span
+                    className={classNames(
+                      'bg-clip-text text-transparent bg-gradient-to-r select-none',
+                      serviceName === 'lowRisk'
+                        ? 'from-sefo-orange to-sefo-lightblue'
+                        : 'from-sefo-orange to-sefo-purple'
+                    )}
+                  >
+                    {t(`${serviceName}.title`)}
                   </span>
                 </h1>
               </div>
@@ -347,8 +355,7 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async ({ locale = '' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['menu', 'common', 'services'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, [...defaultLocales])),
     },
   }
 }

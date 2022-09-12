@@ -1,8 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import { defaultLocales } from '@/constants'
 import Container from '@/components/Container'
 import Layout from '@/components/Layout'
 
@@ -23,8 +24,10 @@ const Service: NextPage = () => {
               {t('slogan')}
             </h1>
 
-            <p className="mt-8">{t('description.p1')}</p>
-            <p className="mt-4">{t('description.p2')}</p>
+            <Trans i18nKey="description" ns="about">
+              <p className="mt-8"></p>
+              <p className="mt-4"></p>
+            </Trans>
           </div>
 
           <div className="absolute z-0 -top-4 left-0 w-52 h-52 bg-blue-radial"></div>
@@ -98,8 +101,7 @@ const Service: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale = '' }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['menu', 'common', 'about'])),
-      // Will be passed to the page component as props
+      ...(await serverSideTranslations(locale, [...defaultLocales, 'about'])),
     },
   }
 }
