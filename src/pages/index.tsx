@@ -122,13 +122,14 @@ const Home: NextPage = () => {
           </section>
         </Container>
 
-        <section className="bg-gray-50 py-6 pb-12 z-10">
+        <section className="bg-gray-50 py-6 md:pb-12 z-10">
           <Container>
-            <div className="flex flex-col md:grid md:grid-cols-3 gap-12">
-              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-                <div className="col-span-2 flex items-center">
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-12">
+              <div className="bg-white px-6 py-4 md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="relative col-span-2 flex items-center">
                   <Image
                     src={featuresBtcSupport}
+                    layout="fill"
                     alt={t('features.btcSupport')}
                   />
                 </div>
@@ -139,10 +140,11 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-                <div className="col-span-2 flex items-center">
+              <div className="bg-white px-6 py-4 md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="relative col-span-2 flex items-center">
                   <Image
                     src={featuresNonCustodial}
+                    layout="fill"
                     alt={t('features.nonCustodial')}
                   />
                 </div>
@@ -153,10 +155,11 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded shadow-md grid grid-cols-5 gap-4">
-                <div className="col-span-2 flex items-center">
+              <div className="bg-white px-6 py-4 md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
+                <div className="relative col-span-2 flex items-center">
                   <Image
                     src={featuresEasyAndNoKyc}
+                    layout="fill"
                     alt={t('features.easyAndNoKyc')}
                   />
                 </div>

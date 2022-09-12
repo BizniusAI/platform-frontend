@@ -6,7 +6,6 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import React, { useEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
 import { menuLinks } from '@/constants'
@@ -125,30 +124,24 @@ const DesktopDropdown = ({
 
 export const MobileMenu = () => {
   const { t } = useTranslation(['menu'])
-  const router = useRouter()
 
   return (
-    <>
+    <ul>
       {menuLinks.map((link, index) => {
         return (
-          <div
-            key={`mobile-${index}`}
-            className={`p-2 ${index + 1 === menuLinks.length ? 'pb-4' : ''}`}
+          <li
+            key={index}
+            className={classNames(
+              'p-2 tracking-wider font-normal',
+              index + 1 === menuLinks.length ? 'pb-4' : ''
+            )}
           >
-            <Link href={link.url} passHref>
-              <span
-                className={`py-2 cursor-pointer transition-all duration-300 tracking-wider font-light ${
-                  router.pathname.startsWith(link.url)
-                    ? 'font-normal'
-                    : 'border-opacity-0 hover:border-opacity-25 hover:font-normal'
-                }`}
-              >
-                {t(link.name)}
-              </span>
+            <Link href={link.submenu ? link.submenu[0].url : link.url}>
+              <a>{t(link.name)}</a>
             </Link>
-          </div>
+          </li>
         )
       })}
-    </>
+    </ul>
   )
 }
