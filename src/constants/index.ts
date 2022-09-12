@@ -9,7 +9,7 @@ export const menuLinks: TMenu[] = [
     url: '/services',
     submenu: [
       { name: 'lowRisk', url: '/services/low-risk' },
-      { name: 'highRisk', url: '/services/low-risk' },
+      { name: 'highRisk', url: '/services/high-risk' },
     ],
   },
   {
