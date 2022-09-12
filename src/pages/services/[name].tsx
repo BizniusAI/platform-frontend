@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useEffect, useState } from 'react'
 
@@ -53,20 +53,14 @@ const Service: NextPage = () => {
                   <h4 className="text-lg text-sefo-grayblue font-bold text-center">
                     {t('subscribe.disclaimer.title')}
                   </h4>
-                  <ol className="ml-4 list-decimal">
-                    <li>
-                      Subscription cannot be cancelled. However, 100% of your
-                      principal asset is redeemable.
-                    </li>
-                    <li>
-                      APR does not mean the actual or predicted returns in fiat
-                      currency.
-                    </li>
-                    <li>
-                      Refer to SeFo’s platform for the latest annual interest
-                      rate for your renewed subscription.
-                    </li>
-                  </ol>
+
+                  <Trans i18nKey="subscribe.disclaimer.content" ns="services">
+                    <ol className="ml-4 list-decimal">
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ol>
+                  </Trans>
                 </div>
 
                 <div className="mb-3 bg-sefo-grayblue-200 px-6 py-4 rounded-xl">
