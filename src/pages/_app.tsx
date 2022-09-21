@@ -8,7 +8,7 @@ import app from '@/utils/firebase'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NEXT_ENV === 'production') {
       getAnalytics(app)
     }
   }, [])
