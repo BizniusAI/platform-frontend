@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const routers = useRouter()
 
   useEffect(() => {
-    if (process.env.NEXT_ENV === 'production') {
+    if (process.env.NEXT_PUBLIC_ENV === 'production') {
       const analytics = getAnalytics(app)
       const onLogEvent = (url: string) => {
         logEvent(analytics, 'screen_view', {
