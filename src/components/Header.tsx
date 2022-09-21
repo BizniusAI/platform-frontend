@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import logo from '@public/img/lucidLakeLogo.svg'
+import logo from '@public/img/sefoFinanceLogo.svg'
 
 import Container from '@/components/Container'
 import { DesktopMenu, MobileMenu } from '@/components/Menu'

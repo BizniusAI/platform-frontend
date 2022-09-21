@@ -13,18 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (process.env.NEXT_PUBLIC_ENV === 'production') {
       const analytics = getAnalytics(app)
-      const logScreenViewEvent = (url: string) => {
-        logEvent(analytics, 'screen_view', {
-          firebase_screen: url,
-          firebase_screen_class: undefined,
-        })
+      const logPageViewEvent = () => {
+        logEvent(analytics, 'page_view')
       }
 
-      routers.events.on('routeChangeComplete', logScreenViewEvent)
-      logScreenViewEvent(window.location.pathname)
+      routers.events.on('routeChangeComplete', logPageViewEvent)
 
       return () => {
-        routers.events.off('routeChangeComplete', logScreenViewEvent)
+        routers.events.off('routeChangeComplete', logPageViewEvent)
       }
     }
   }, [])
