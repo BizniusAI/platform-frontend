@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
@@ -14,14 +13,12 @@ import { defaultLocales } from '@/constants'
 // images
 import mainBitcoin from '@public/img/home/main.bitcoin.png'
 import featuresBtcSupport from '@public/img/home/features.btcSupport.svg'
-import featuresEasyAndNoKyc from '@public/img/home/features.easyAndNoKyc.svg'
+import featuresFastAndNoKyc from '@public/img/home/features.fastAndNoKyc.svg'
 import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
 import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
 import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
 // import consultation from '@public/img/home/consultation.svg'
 import partnersAppWorks from '@public/img/home/partners.appWorks.png'
-import partnersDLCLink from '@public/img/home/partners.dlcLink.png'
-import partnersStacksFoundation from '@public/img/home/partners.stacksFoundation.png'
 import partnersTAcc from '@public/img/home/partners.tacc.png'
 import partnersWeb3Startup from '@public/img/home/partners.web3Startup.png'
 
@@ -80,7 +77,7 @@ const Home: NextPage = () => {
                     <input
                       type="email"
                       className={classNames(
-                        'form-input px-3 py-2 rounded-lg border-gray-300',
+                        'form-input md:w-64 lg:w-72 px-3 py-2 rounded-lg border-gray-300',
                         subscribed ? 'cursor-not-allowed' : ''
                       )}
                       placeholder={
@@ -158,7 +155,7 @@ const Home: NextPage = () => {
               <div className="bg-white px-6 py-4 min-h-[6rem] md:min-h-[8rem] md:py-6 rounded shadow-md grid grid-cols-5 gap-4">
                 <div className="relative col-span-2 flex items-center">
                   <Image
-                    src={featuresEasyAndNoKyc}
+                    src={featuresFastAndNoKyc}
                     layout="fill"
                     alt={t('features.easyAndNoKyc')}
                   />
@@ -174,10 +171,10 @@ const Home: NextPage = () => {
         </section>
       </div>
 
-      <section className="py-12">
+      <section className="py-12 lg:px-20 xl:px-36">
         <Container>
           <div className="flex justify-center">
-            <H2 className="px-5 py-2 rounded text-white bg-gradient-to-r from-sefo-purple to-sefo-blue">
+            <H2 className="px-5 py-2 rounded text-white bg-gradient-to-br from-sefo-purple to-sefo-blue">
               {t('investmentIntro.title')}
             </H2>
           </div>
@@ -193,21 +190,16 @@ const Home: NextPage = () => {
                   </div>
 
                   <H2>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step1.title')}
                     </span>
                   </H2>
                 </div>
 
-                <div className="mt-1 pl-14 font-medium">
-                  <Trans i18nKey="investmentIntro.step1.content" ns="homepage">
-                    <p></p>
-                    <ul className="ml-4 list-disc">
-                      <li>
-                        <span className="underline cursor-pointer"></span>
-                      </li>
-                    </ul>
-                  </Trans>
+                <div className="mt-1 pl-14">
+                  <p className="font-medium">
+                    {t('investmentIntro.step1.content')}
+                  </p>
                 </div>
               </div>
 
@@ -233,7 +225,7 @@ const Home: NextPage = () => {
                     </div>
 
                     <H2>
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                         {t('investmentIntro.step2.title')}
                       </span>
                     </H2>
@@ -248,72 +240,49 @@ const Home: NextPage = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 pl-14">
-                <Link href="/services/low-risk">
-                  <a>
-                    <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-lightblue">
-                      <div className="w-full p-4 rounded-[1.25rem] bg-white">
-                        <H1 className="text-center">
-                          <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-lightblue select-none">
-                            {t('lowRisk.title', { ns: 'services' })}
-                          </span>
-                        </H1>
-
-                        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                          <div className="px-2 py-3 rounded-xl shadow-md">
-                            <p>{t('apy.title', { ns: 'services' })}</p>
-                            <p className="font-bold">
-                              <span className="text-3xl tracking-wider">
-                                3.1
-                              </span>
-                              %
-                            </p>
-                          </div>
-
-                          <div className="px-2 py-3 rounded-xl shadow-md">
-                            <p>{t('period.title', { ns: 'services' })}</p>
-                            <p className="font-bold">
-                              <span className="text-3xl tracking-wider">1</span>
-                              week
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-purple to-sefo-blue">
+                  <div className="w-full h-full grid grid-cols-7 gap-4 p-4 rounded-[1.25rem] bg-white">
+                    <div className="col-span-4 flex justify-center items-center">
+                      <H1 className="text-center">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
+                          <Trans
+                            i18nKey="stableVault.title"
+                            ns="services"
+                          ></Trans>
+                        </span>
+                      </H1>
                     </div>
-                  </a>
-                </Link>
 
-                <Link href="/services/high-risk">
-                  <a>
-                    <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-orange to-sefo-purple">
-                      <div className="w-full p-4 rounded-[1.25rem] bg-white">
-                        <H1 className="text-center">
-                          <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-orange to-sefo-purple select-none">
-                            {t('highRisk.title', { ns: 'services' })}
-                          </span>
-                        </H1>
-
-                        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
-                          <div className="px-2 py-3 rounded-xl shadow-md">
-                            <p>{t('apy.title', { ns: 'services' })}</p>
-                            <p className="font-bold">
-                              <span className="text-3xl tracking-wider">
-                                5.2
-                              </span>
-                              %
-                            </p>
-                          </div>
-                          <div className="px-2 py-3 rounded-xl shadow-md">
-                            <p>{t('period.title', { ns: 'services' })}</p>
-                            <p className="font-bold">
-                              <span className="text-3xl tracking-wider">1</span>
-                              week
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="col-span-3 flex flex-col justify-center items-center px-2 py-3 rounded-xl bg-sefo-lightgray">
+                      <p>{t('apy.title', { ns: 'services' })}</p>
+                      <p className="font-bold">
+                        <span className="text-4xl tracking-wider">5.1</span>%
+                      </p>
                     </div>
-                  </a>
-                </Link>
+                  </div>
+                </div>
+
+                <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-purple to-sefo-blue">
+                  <div className="w-full h-full grid grid-cols-7 gap-4 p-4 rounded-[1.25rem] bg-white">
+                    <div className="col-span-4 flex justify-center items-center">
+                      <H1 className="text-center">
+                        <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
+                          <Trans
+                            i18nKey="advancedVault.title"
+                            ns="services"
+                          ></Trans>
+                        </span>
+                      </H1>
+                    </div>
+
+                    <div className="col-span-3 flex flex-col justify-center items-center px-2 py-3 rounded-xl bg-sefo-lightgray">
+                      <p>{t('apy.title', { ns: 'services' })}</p>
+                      <p className="font-bold">
+                        <span className="text-4xl tracking-wider">20.0</span>%
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -327,7 +296,7 @@ const Home: NextPage = () => {
                   </div>
 
                   <H2>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                       {t('investmentIntro.step3.title')}
                     </span>
                   </H2>
@@ -358,24 +327,16 @@ const Home: NextPage = () => {
         <Container>
           <H2 className="text-center">{t('partners.title')}</H2>
 
-          <div className="grid grid-rows-2 grid-cols-6 gap-4">
-            <div className="col-span-2">
-              <Image src={partnersStacksFoundation} alt="Stacks Foundation" />
-            </div>
-
-            <div className="col-span-2">
-              <Image src={partnersAppWorks} alt="App Works" />
-            </div>
-
-            <div className="col-span-2">
-              <Image src={partnersDLCLink} alt="DLC.Link" />
-            </div>
-
-            <div className="col-start-2 col-span-2">
+          <div className="grid grid-cols-3 gap-4">
+            <div>
               <Image src={partnersWeb3Startup} alt="Stacks Web3.0 Startup" />
             </div>
 
-            <div className="col-span-2">
+            <div>
+              <Image src={partnersAppWorks} alt="App Works" />
+            </div>
+
+            <div>
               <Image src={partnersTAcc} className="col-span-2" alt="TAcc+" />
             </div>
           </div>
