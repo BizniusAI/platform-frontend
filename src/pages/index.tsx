@@ -18,7 +18,7 @@ import featuresEasyAndNoKyc from '@public/img/home/features.easyAndNoKyc.svg'
 import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
 import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
 import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
-import consultation from '@public/img/home/consultation.svg'
+// import consultation from '@public/img/home/consultation.svg'
 import partnersAppWorks from '@public/img/home/partners.appWorks.png'
 import partnersDLCLink from '@public/img/home/partners.dlcLink.png'
 import partnersStacksFoundation from '@public/img/home/partners.stacksFoundation.png'
@@ -382,6 +382,7 @@ const Home: NextPage = () => {
         </Container>
       </section>
 
+      {/*
       <section className="py-12">
         <Container>
           <H2 className="text-2xl font-bold text-center select-none">
@@ -432,6 +433,7 @@ const Home: NextPage = () => {
           </div>
         </Container>
       </section>
+      */}
     </Layout>
   )
 }

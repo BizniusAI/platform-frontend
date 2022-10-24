@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faRightLeft, faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 import Image from 'next/image'
@@ -9,8 +10,8 @@ import { useTranslation } from 'next-i18next'
 import logo from '@public/img/sefoFinanceLogo.svg'
 
 import Container from '@/components/Container'
-import { DesktopMenu, MobileMenu } from '@/components/Menu'
-import { languages } from '@/constants'
+// import { DesktopMenu, MobileMenu } from '@/components/Menu'
+import { languages, twitterLink } from '@/constants'
 
 const Header = (): JSX.Element => {
   const { t, i18n } = useTranslation(['menu', 'common'])
@@ -41,20 +42,20 @@ const Header = (): JSX.Element => {
           </div>
 
           <div className="hidden md:block md:order-2">
-            <DesktopMenu />
+            {/* <DesktopMenu /> */}
           </div>
           <div className="hidden md:block md:grow md:order-3"></div>
 
-          <div className="hidden md:flex md:gap-2 text-sm tracking-wider md:order-4">
-            {/*
-          <button className="rounded px-3 font-light">
-            {t('login', { ns: 'common' })}
-          </button>
-          <button className="border border-blue-500 bg-blue-500 text-white rounded px-3 font-light">
-            {t('register', { ns: 'common' })}
-          </button>
-          <div className="border border-gray-200"></div>
-          */}
+          <div className="hidden md:flex md:gap-8 text-sm font-semibold tracking-wider md:order-4">
+            <Link href={twitterLink}>
+              <a target="_blank" rel="noopener noreferrer">
+                <div className="flex items-center gap-2 px-1">
+                  <FontAwesomeIcon className="w-4" icon={faTwitter} />
+                  Twitter
+                </div>
+              </a>
+            </Link>
+
             <div
               className="flex items-center gap-2 px-1 cursor-pointer"
               onClick={changeLocale}
@@ -79,13 +80,7 @@ const Header = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="md:hidden order-3">
-            {/*
-          <button className="rounded px-3 text-blue-500">
-            {t('login', { ns: 'common' })}
-          </button>
-          */}
-          </div>
+          <div className="md:hidden order-3"></div>
         </nav>
       </Container>
 
@@ -95,7 +90,7 @@ const Header = (): JSX.Element => {
           isMobileHidden ? 'max-h-0' : 'max-h-screen'
         } md:max-h-0 text-center overflow-hidden shadow-lg transition-max-height duration-700`}
       >
-        <MobileMenu />
+        {/* <MobileMenu /> */}
       </div>
     </header>
   )

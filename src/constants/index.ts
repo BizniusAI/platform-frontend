@@ -4,6 +4,8 @@ export const languages: TLanguages = {
   'zh-hant': '繁體中文',
 }
 
+export const twitterLink = 'https://twitter.com/SeFo_Fi'
+
 export const menuLinks: TMenu[] = [
   {
     name: 'service',
