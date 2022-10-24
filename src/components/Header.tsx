@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faRightLeft, faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
+import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
 import logo from '@public/img/sefoFinanceLogo.svg'
@@ -16,14 +16,16 @@ import { languages, twitterLink } from '@/constants'
 const Header = (): JSX.Element => {
   const { t, i18n } = useTranslation(['menu', 'common'])
   const [isMobileHidden /*setIsMobileHidden*/] = useState<boolean>(true)
-  const router = useRouter()
+  // const router = useRouter()
 
+  /*
   const changeLocale = () => {
     router.push(router.pathname, router.asPath, {
       locale:
         i18n.language.toLocaleLowerCase() === 'zh-hant' ? 'en' : 'zh-hant',
     })
   }
+  */
 
   return (
     <header className="fixed top-0 w-full bg-white z-50 select-none shadow-md">
@@ -57,13 +59,13 @@ const Header = (): JSX.Element => {
             </Link>
 
             <div
-              className="flex items-center gap-2 px-1 cursor-pointer"
-              onClick={changeLocale}
+              className="flex items-center gap-2 px-1"
+              // onClick={changeLocale}
             >
               <FontAwesomeIcon className="w-4" icon={faEarthAmericas} />
               <span className="inline-flex gap-2">
                 {languages[i18n.language?.toLocaleLowerCase()]}
-                <FontAwesomeIcon className="w-3" icon={faRightLeft} />
+                {/*<FontAwesomeIcon className="w-3" icon={faRightLeft} />*/}
               </span>
             </div>
           </div>
