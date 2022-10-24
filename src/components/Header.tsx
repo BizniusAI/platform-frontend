@@ -15,7 +15,7 @@ import { languages, twitterLink } from '@/constants'
 
 const Header = (): JSX.Element => {
   const { t, i18n } = useTranslation(['menu', 'common'])
-  const [isMobileHidden, setIsMobileHidden] = useState<boolean>(true)
+  const [isMobileHidden /*setIsMobileHidden*/] = useState<boolean>(true)
   const router = useRouter()
 
   const changeLocale = () => {
@@ -70,6 +70,7 @@ const Header = (): JSX.Element => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center order-1">
+            {/*
             <div
               className={`hamburger-btn ${isMobileHidden ? '' : 'open'}`}
               onClick={() => setIsMobileHidden((prev) => !prev)}
@@ -78,9 +79,17 @@ const Header = (): JSX.Element => {
               <span></span>
               <span></span>
             </div>
+            */}
+            <div className="w-4"></div>
           </div>
 
-          <div className="md:hidden order-3"></div>
+          <div className="md:hidden order-3">
+            <Link href={twitterLink}>
+              <a target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon className="w-4" icon={faTwitter} />
+              </a>
+            </Link>
+          </div>
         </nav>
       </Container>
 

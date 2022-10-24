@@ -77,7 +77,7 @@ const Home: NextPage = () => {
                     <input
                       type="email"
                       className={classNames(
-                        'form-input md:w-64 lg:w-72 px-3 py-2 rounded-lg border-gray-300',
+                        'form-input md:w-64 lg:w-72 px-3 py-2 rounded-lg border-gray-300 bg-white',
                         subscribed ? 'cursor-not-allowed' : ''
                       )}
                       placeholder={
@@ -243,7 +243,7 @@ const Home: NextPage = () => {
                 <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-purple to-sefo-blue">
                   <div className="w-full h-full grid grid-cols-7 gap-4 p-4 rounded-[1.25rem] bg-white">
                     <div className="col-span-4 flex justify-center items-center">
-                      <H1 className="text-center">
+                      <H1 className="!text-2xl sm:!text-4xl text-center">
                         <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                           <Trans
                             i18nKey="stableVault.title"
@@ -256,7 +256,10 @@ const Home: NextPage = () => {
                     <div className="col-span-3 flex flex-col justify-center items-center px-2 py-3 rounded-xl bg-sefo-lightgray">
                       <p>{t('apy.title', { ns: 'services' })}</p>
                       <p className="font-bold">
-                        <span className="text-4xl tracking-wider">5.1</span>%
+                        <span className="text-2xl sm:text-4xl tracking-wider">
+                          5.1
+                        </span>
+                        %
                       </p>
                     </div>
                   </div>
@@ -265,7 +268,7 @@ const Home: NextPage = () => {
                 <div className="relative p-1 grow rounded-3xl bg-gradient-to-br from-sefo-purple to-sefo-blue">
                   <div className="w-full h-full grid grid-cols-7 gap-4 p-4 rounded-[1.25rem] bg-white">
                     <div className="col-span-4 flex justify-center items-center">
-                      <H1 className="text-center">
+                      <H1 className="!text-2xl sm:!text-4xl text-center">
                         <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                           <Trans
                             i18nKey="advancedVault.title"
@@ -278,7 +281,10 @@ const Home: NextPage = () => {
                     <div className="col-span-3 flex flex-col justify-center items-center px-2 py-3 rounded-xl bg-sefo-lightgray">
                       <p>{t('apy.title', { ns: 'services' })}</p>
                       <p className="font-bold">
-                        <span className="text-4xl tracking-wider">20.0</span>%
+                        <span className="text-2xl sm:text-4xl tracking-wider">
+                          20.0
+                        </span>
+                        %
                       </p>
                     </div>
                   </div>
@@ -323,7 +329,7 @@ const Home: NextPage = () => {
         </Container>
       </section>
 
-      <section className="py-12 bg-white sm:bg-gray-100">
+      <section className="py-12 bg-gray-100">
         <Container>
           <H2 className="text-center">{t('partners.title')}</H2>
 
