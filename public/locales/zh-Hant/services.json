@@ -20,7 +20,7 @@
   "subscribe.disclaimer.content": "<0><0>Subscription cannot be cancelled. However, 100% of your principal asset is redeemable.</0><1>APR does not mean the actual or predicted returns in fiat currency.</1><2>Refer to SeFo’s platform for the latest annual interest rate for your renewed subscription.</2></0>",
   "subscribe.agreement": "I have read and I agree to Disclaimer & Service Agreement",
 
-  "lowRisk.title": "Low Risk Vault",
+  "stableVault.title": "Stable <br/> Vault",
 
-  "highRisk.title": "High Risk Vault"
+  "advancedVault.title": "Advanced <br/> Vault"
 }

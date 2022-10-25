@@ -4,13 +4,15 @@ export const languages: TLanguages = {
   'zh-hant': '繁體中文',
 }
 
+export const twitterLink = 'https://twitter.com/SeFo_Fi'
+
 export const menuLinks: TMenu[] = [
   {
     name: 'service',
     url: '/services',
     submenu: [
-      { name: 'lowRisk', url: '/services/low-risk' },
-      { name: 'highRisk', url: '/services/high-risk' },
+      { name: 'stableVault', url: '/services/stable-vault' },
+      { name: 'advancedVault', url: '/services/advanced-vault' },
     ],
   },
   {

@@ -14,12 +14,12 @@ import { H1, H3 } from '@/components/Headings'
 import Layout from '@/components/Layout'
 
 // images
-import lowRiskIcon from '@public/img/services/lowRiskIcon.png'
+import stableVaultIcon from '@public/img/services/stableVaultIcon.png'
 import explanationDescription from '@public/img/services/explanation.description.jpg'
 
 const serviceNameMapping: Record<string, string> = {
-  'low-risk': 'lowRisk',
-  'high-risk': 'highRisk',
+  'stable-vault': 'stableVault',
+  'advanced-vault': 'advancedVault',
 }
 
 const Service: NextPage = () => {
@@ -163,7 +163,7 @@ const Service: NextPage = () => {
                 <H1 className="flex items-center gap-8">
                   <div className="relative w-16 h-16 shrink-0">
                     <Image
-                      src={lowRiskIcon}
+                      src={stableVaultIcon}
                       alt={t('features.nonCustodial')}
                       layout="fill"
                     />
@@ -171,8 +171,8 @@ const Service: NextPage = () => {
 
                   <span
                     className={classNames(
-                      'bg-clip-text text-transparent bg-gradient-to-r',
-                      serviceName === 'lowRisk'
+                      'bg-clip-text text-transparent bg-gradient-to-br',
+                      serviceName === 'stableVault'
                         ? 'from-sefo-orange to-sefo-lightblue'
                         : 'from-sefo-orange to-sefo-purple'
                     )}
@@ -344,7 +344,7 @@ const Service: NextPage = () => {
 export async function getStaticPaths() {
   const paths = [
     {
-      params: { name: 'low-risk' },
+      params: { name: 'stable-vault' },
     },
   ]
 

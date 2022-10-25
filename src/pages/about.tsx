@@ -47,7 +47,7 @@ const Service: NextPage = () => {
               <Image src={profileAidan} alt="Aidan, CEO" />
 
               <p className="text-center text-xl font-bold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                   Aidan, CEO
                 </span>
               </p>
@@ -63,7 +63,7 @@ const Service: NextPage = () => {
               <Image src={profileHannibal} alt="Aidan, CEO" />
 
               <p className="text-center text-xl font-bold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                   Hannibal, CMO
                 </span>
               </p>
@@ -79,7 +79,7 @@ const Service: NextPage = () => {
               <Image src={profileAndy} alt="Aidan, CEO" />
 
               <p className="text-center text-xl font-bold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-sefo-purple to-sefo-blue select-none">
+                <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
                   Andy, Engineer
                 </span>
               </p>
