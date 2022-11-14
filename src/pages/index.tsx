@@ -178,7 +178,7 @@ const Home: NextPage = () => {
         <Container>
           <div className="space-y-24">
             <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
                 <div className="space-y-2">
                   <H2 className="text-3xl">
                     <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
@@ -189,7 +189,8 @@ const Home: NextPage = () => {
                     {t('introduction.holders.description')}
                   </p>
                 </div>
-                <div>
+
+                <div className="mx-4 sm:mx-12 md:mx-auto">
                   <Image
                     src={introductionHolders}
                     alt={t('introduction.holders.title')}
@@ -201,7 +202,7 @@ const Home: NextPage = () => {
             </div>
 
             <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
                 <div className="space-y-2">
                   <H2 className="text-3xl">
                     <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
@@ -212,7 +213,8 @@ const Home: NextPage = () => {
                     {t('introduction.invest.description')}
                   </p>
                 </div>
-                <div>
+
+                <div className="mx-4 sm:mx-12 md:mx-auto">
                   <Image
                     src={introductionInvest}
                     alt={t('introduction.invest.title')}
@@ -220,11 +222,11 @@ const Home: NextPage = () => {
                 </div>
               </div>
 
-              <div className="absolute mx-6 sm:mx-24 -top-36 right-12 sm:right-20 md:right-20 w-96 h-96 bg-blue-radial opacity-60"></div>
+              <div className="absolute sm:mx-24 -top-36 right-0 sm:right-8 md:right-20 w-96 h-96 bg-blue-radial opacity-60"></div>
             </div>
 
             <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
                 <div className="space-y-2">
                   <H2 className="text-3xl">
                     <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
@@ -235,7 +237,8 @@ const Home: NextPage = () => {
                     {t('introduction.strategy.description')}
                   </p>
                 </div>
-                <div>
+
+                <div className="mx-4 sm:mx-12 md:mx-auto">
                   <Image
                     src={introductionStrategy}
                     alt={t('introduction.strategy.title')}

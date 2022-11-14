@@ -60,7 +60,7 @@ a {
 
 .container {
   width: 100%;
-  max-width: 1366px;
+  max-width: 1200px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;

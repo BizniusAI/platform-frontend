@@ -24,7 +24,7 @@ const Announcement = (): JSX.Element => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="text-center hover:underline"
             >
               {t('announcement.litepaper')}
             </a>
