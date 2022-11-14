@@ -52,10 +52,10 @@ a {
 .bg-purple-radial {
   background: radial-gradient(
     50% 50% at 50% 50%,
-    rgba(127, 37, 225, 0.3) 0%,
-    rgba(127, 37, 225, 0) 100%
+    rgba(127, 37, 225, 0.4) 0%,
+    rgba(198, 0, 248, 0) 100%
   );
-  filter: blur(1.5rem);
+  filter: blur(1rem);
 }
 
 .container {

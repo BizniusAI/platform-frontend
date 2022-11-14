@@ -74,7 +74,7 @@ const Layout = ({ children, title = '', metadata }: TProps): JSX.Element => {
 
       <Header />
 
-      <div className="pt-16 overscroll-none">{children}</div>
+      <div className="pt-32 overscroll-none">{children}</div>
 
       <Footer />
     </div>
