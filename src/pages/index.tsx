@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
@@ -12,11 +12,14 @@ import { defaultLocales } from '@/constants'
 
 // images
 import mainBitcoin from '@public/img/home/main.bitcoin.png'
-import featuresBtcSupport from '@public/img/home/features.btcSupport.svg'
-import featuresFastAndNoKyc from '@public/img/home/features.fastAndNoKyc.svg'
-import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
-import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
-import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
+import introductionHolders from '@public/img/home/introduction.holders.png'
+import introductionInvest from '@public/img/home/introduction.invest.png'
+import introductionStrategy from '@public/img/home/introduction.strategy.png'
+// import featuresBtcSupport from '@public/img/home/features.btcSupport.svg'
+// import featuresFastAndNoKyc from '@public/img/home/features.fastAndNoKyc.svg'
+// import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
+// import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
+// import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
 // import consultation from '@public/img/home/consultation.svg'
 import partnersAppWorks from '@public/img/home/partners.appWorks.png'
 import partnersTAcc from '@public/img/home/partners.tacc.png'
@@ -63,8 +66,8 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <div className="-mt-16 flex flex-col w-full h-screen">
-        <Container className="pt-16 grow overflow-hidden">
+      <div className="-mt-32 flex flex-col w-full">
+        <Container className="pt-32 grow">
           <section className="h-full relative md:grid md:grid-cols-5 items-center py-8">
             <div className="col-span-3 relative">
               <div>
@@ -114,11 +117,10 @@ const Home: NextPage = () => {
                 />
               </div>
             </div>
-
-            <div className="absolute mx-6 sm:mx-24 -bottom-40 left-12 sm:left-6 md:left-0 w-52 h-52 bg-blue-radial"></div>
           </section>
         </Container>
 
+        {/*
         <section className="bg-gray-50 py-6 md:pb-12 z-10">
           <Container>
             <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-8 lg:gap-12">
@@ -169,8 +171,88 @@ const Home: NextPage = () => {
             </div>
           </Container>
         </section>
+        */}
       </div>
 
+      <section className="my-16">
+        <Container>
+          <div className="space-y-24">
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+                <div className="space-y-2">
+                  <H2 className="text-3xl">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
+                      {t('introduction.holders.title')}
+                    </span>
+                  </H2>
+                  <p className="text-justify">
+                    {t('introduction.holders.description')}
+                  </p>
+                </div>
+
+                <div className="mx-4 sm:mx-12 md:mx-auto">
+                  <Image
+                    src={introductionHolders}
+                    alt={t('introduction.holders.title')}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute mx-6 sm:mx-24 -top-28 left-12 sm:left-6 md:left-0 w-72 h-72 bg-purple-radial"></div>
+            </div>
+
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+                <div className="space-y-2">
+                  <H2 className="text-3xl">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
+                      {t('introduction.invest.title')}
+                    </span>
+                  </H2>
+                  <p className="text-justify">
+                    {t('introduction.invest.description')}
+                  </p>
+                </div>
+
+                <div className="mx-4 sm:mx-12 md:mx-auto">
+                  <Image
+                    src={introductionInvest}
+                    alt={t('introduction.invest.title')}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute sm:mx-24 -top-36 right-0 sm:right-8 md:right-20 w-96 h-96 bg-blue-radial opacity-60"></div>
+            </div>
+
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+                <div className="space-y-2">
+                  <H2 className="text-3xl">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
+                      {t('introduction.strategy.title')}
+                    </span>
+                  </H2>
+                  <p className="text-justify">
+                    {t('introduction.strategy.description')}
+                  </p>
+                </div>
+
+                <div className="mx-4 sm:mx-12 md:mx-auto">
+                  <Image
+                    src={introductionStrategy}
+                    alt={t('introduction.strategy.title')}
+                  />
+                </div>
+              </div>
+
+              <div className="absolute -top-12 left-12 sm:left-6 md:-left-12 w-52 h-52 bg-blue-radial opacity-70"></div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/*
       <section className="py-12 lg:px-20 xl:px-36">
         <Container>
           <div className="flex justify-center">
@@ -328,6 +410,7 @@ const Home: NextPage = () => {
           </div>
         </Container>
       </section>
+      */}
 
       <section className="py-12 bg-gray-100">
         <Container>
