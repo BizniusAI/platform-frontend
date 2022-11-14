@@ -3,6 +3,13 @@
 
   "main.slogan": "Grows Bitcoin safe & easy on the trustable investment platform",
 
+  "introduction.holders.title": "Designed for Holders",
+  "introduction.holders.description": "Using DeFis could be overwhelming. As most platforms target technical users, they overuse jargon and dazzling information. SeFo, on the other hand, aims to create a seamless experience for people who have little time to make long-term investments. We recreate user flows in DeFi and focus on building an accessible system.",
+  "introduction.invest.title": "Self-custody Invest",
+  "introduction.invest.description": "Fully controlling your asset is the safest way to manage wealth. In 2022, the whole world witnessed the devastating collapse of crypto unicorns due to bad custodial management, causing over $8.2B loss to individual investors. It is time for people to have the right to safeguard themselves in crypto investment and to earn reliable yields by unleashing the power of blockchain.",
+  "introduction.strategy.title": "Auto-farming Strategy",
+  "introduction.strategy.description": "SeFo provides one-stop services to grow your asset. The vault generates yields by providing liquidity in the liquidity pool on trusted services; it also reinvests the rewards automatically to maximize the compounding effect. The strategy is not only designed to make profits but also save you from tedious manual operations, potential human error, and overpaying gas fees.",
+
   "features.btcSupport": "Native Bitcoin Support",
   "features.nonCustodial": "Non-Custodial Management",
   "features.easyAndNoKyc": "Fast & No KYC Onboarding",
