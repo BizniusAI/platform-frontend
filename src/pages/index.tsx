@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import { Trans, useTranslation } from 'next-i18next'
+import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
@@ -12,11 +12,11 @@ import { defaultLocales } from '@/constants'
 
 // images
 import mainBitcoin from '@public/img/home/main.bitcoin.png'
-import featuresBtcSupport from '@public/img/home/features.btcSupport.svg'
-import featuresFastAndNoKyc from '@public/img/home/features.fastAndNoKyc.svg'
-import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
-import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
-import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
+// import featuresBtcSupport from '@public/img/home/features.btcSupport.svg'
+// import featuresFastAndNoKyc from '@public/img/home/features.fastAndNoKyc.svg'
+// import featuresNonCustodial from '@public/img/home/features.nonCustodial.svg'
+// import investmentIntroStep1 from '@public/img/home/investmentIntro.step1.svg'
+// import investmentIntroStep3 from '@public/img/home/investmentIntro.step3.svg'
 // import consultation from '@public/img/home/consultation.svg'
 import partnersAppWorks from '@public/img/home/partners.appWorks.png'
 import partnersTAcc from '@public/img/home/partners.tacc.png'
@@ -119,6 +119,7 @@ const Home: NextPage = () => {
           </section>
         </Container>
 
+        {/*
         <section className="bg-gray-50 py-6 md:pb-12 z-10">
           <Container>
             <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-8 lg:gap-12">
@@ -169,8 +170,10 @@ const Home: NextPage = () => {
             </div>
           </Container>
         </section>
+        */}
       </div>
 
+      {/*
       <section className="py-12 lg:px-20 xl:px-36">
         <Container>
           <div className="flex justify-center">
@@ -328,6 +331,7 @@ const Home: NextPage = () => {
           </div>
         </Container>
       </section>
+      */}
 
       <section className="py-12 bg-gray-100">
         <Container>
