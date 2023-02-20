@@ -1,8 +1,23 @@
 {
   "joinWaitlist": "Join Waitlist",
 
-  "main.slogan": "Grows Bitcoin safe & easy",
-  "sub.slogan": "on the trustable investment platform",
+  "main.slogan": "The Future of<br/>Bitcoin Lending and Earning",
+
+  "intro.title": "SeFo is an Optimized Double-Layer Fixed Rate Lending Protocol on <0><0>Bitcoin</0></0>",
+
+  "mechanism.title": "Mechanism",
+
+  "team.title": "Team Member",
+  "team.aidan.name": "Aidan",
+  "team.aidan.title": "Founder & CEO",
+  "team.andy.name": "Andy",
+  "team.andy.title": "Full-Stack Engineer",
+  "team.kurt.name": "Kurt",
+  "team.kurt.title": "Business Analyst",
+  "team.shawn.name": "Shawn",
+  "team.shawn.title": "Research Advisor",
+  "team.wade.name": "Wade",
+  "team.wade.title": "Lead Engineer",
 
   "backedBy.title": "Backed By"
 }

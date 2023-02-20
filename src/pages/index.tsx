@@ -1,12 +1,13 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
-import { useTranslation } from 'next-i18next'
+import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
 import Container from '@/components/Container'
-import { H1, H2 } from '@/components/Headings'
+import GradientText from '@/components/GradientText'
+import { H1, H2, H3 } from '@/components/Headings'
 import Layout from '@/components/Layout'
 import { defaultLocales } from '@/constants'
 
@@ -14,6 +15,11 @@ import { defaultLocales } from '@/constants'
 import backedByAppWorks from '@public/img/homepage/backedBy.appWorks.png'
 import backedByBtcStartupLab from '@public/img/homepage/backedBy.btcStartupLab.png'
 import backedByWaterdripCapital from '@public/img/homepage/backedBy.waterdripCapital.png'
+import memberAidan from '@public/img/homepage/member.Aidan.png'
+import memberAndy from '@public/img/homepage/member.Andy.png'
+import memberKurt from '@public/img/homepage/member.Kurt.png'
+import memberShawn from '@public/img/homepage/member.Shawn.png'
+import memberWade from '@public/img/homepage/member.Wade.png'
 
 const Home: NextPage = () => {
   const [emailAddress, setEmailAddress] = useState<string>('')
@@ -61,13 +67,9 @@ const Home: NextPage = () => {
           <section className="h-full relative md:grid md:grid-cols-5 items-center py-8">
             <div className="col-span-3 relative">
               <div>
-                <H1 className="mt-2 md:max-w-[29rem] text-center md:text-left sm:leading-[3.5rem]">
-                  {t('main.slogan')}
+                <H1 className="mt-2 md:max-w-[30rem] text-center md:text-left sm:leading-[3rem]">
+                  <Trans i18nKey="main.slogan" ns="homepage"></Trans>
                 </H1>
-
-                <H2 className="md:max-w-[29rem] text-center md:text-left sm:leading-[3.5rem]">
-                  {t('sub.slogan')}
-                </H2>
 
                 <div className="mt-2 md:mt-6 flex justify-center md:justify-start">
                   <div className="inline-flex">
@@ -111,62 +113,70 @@ const Home: NextPage = () => {
 
       <section className="my-16">
         <Container>
-          <div className="space-y-24">
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-                <div className="space-y-2">
-                  <H2 className="text-3xl">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
-                      {t('introduction.holders.title')}
-                    </span>
-                  </H2>
-                  <p className="text-justify">
-                    {t('introduction.holders.description')}
-                  </p>
-                </div>
+          <H2 className="text-center">
+            <Trans i18nKey="intro.title" ns="homepage">
+              <span>
+                <GradientText />
+              </span>
+            </Trans>
+          </H2>
+        </Container>
+      </section>
 
-                <div className="mx-4 sm:mx-12 md:mx-auto"></div>
+      <section className="my-16">
+        <Container>
+          <H2>{t('mechanism.title')}</H2>
+        </Container>
+      </section>
+
+      <section className="my-16">
+        <Container>
+          <H2 className="text-center">{t('team.title')}</H2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 gap-4 sm:gap-8 text-center">
+            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+              <div>
+                <Image src={memberAidan} layout="intrinsic" />
               </div>
-
-              <div className="absolute mx-6 sm:mx-24 -top-28 left-12 sm:left-6 md:left-0 w-72 h-72 bg-purple-radial"></div>
+              <H3>
+                <GradientText>{t('team.aidan.name')}</GradientText>
+              </H3>
+              <p className="text-sm font-bold">{t('team.aidan.title')}</p>
             </div>
-
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-                <div className="space-y-2">
-                  <H2 className="text-3xl">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
-                      {t('introduction.invest.title')}
-                    </span>
-                  </H2>
-                  <p className="text-justify">
-                    {t('introduction.invest.description')}
-                  </p>
-                </div>
-
-                <div className="mx-4 sm:mx-12 md:mx-auto"></div>
+            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+              <div>
+                <Image src={memberWade} layout="intrinsic" />
               </div>
-
-              <div className="absolute sm:mx-24 -top-36 right-0 sm:right-8 md:right-20 w-96 h-96 bg-blue-radial opacity-60"></div>
+              <H3>
+                <GradientText>{t('team.wade.name')}</GradientText>
+              </H3>
+              <p className="text-sm font-bold">{t('team.wade.title')}</p>
             </div>
-
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-                <div className="space-y-2">
-                  <H2 className="text-3xl">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-br from-sefo-purple to-sefo-blue select-none">
-                      {t('introduction.strategy.title')}
-                    </span>
-                  </H2>
-                  <p className="text-justify">
-                    {t('introduction.strategy.description')}
-                  </p>
-                </div>
-
-                <div className="mx-4 sm:mx-12 md:mx-auto"></div>
+            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+              <div>
+                <Image src={memberAndy} layout="intrinsic" />
               </div>
-
-              <div className="absolute -top-12 left-12 sm:left-6 md:-left-12 w-52 h-52 bg-blue-radial opacity-70"></div>
+              <H3>
+                <GradientText>{t('team.andy.name')}</GradientText>
+              </H3>
+              <p className="text-sm font-bold">{t('team.andy.title')}</p>
+            </div>
+            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+              <div>
+                <Image src={memberKurt} layout="intrinsic" />
+              </div>
+              <H3>
+                <GradientText>{t('team.kurt.name')}</GradientText>
+              </H3>
+              <p className="text-sm font-bold">{t('team.kurt.title')}</p>
+            </div>
+            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+              <div>
+                <Image src={memberShawn} layout="intrinsic" />
+              </div>
+              <H3>
+                <GradientText>{t('team.shawn.name')}</GradientText>
+              </H3>
+              <p className="text-sm font-bold">{t('team.shawn.title')}</p>
             </div>
           </div>
         </Container>
@@ -176,7 +186,7 @@ const Home: NextPage = () => {
         <Container>
           <H2 className="text-center">{t('backedBy.title')}</H2>
 
-          <div className="grid grid-cols-1 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 sm:grid-cols-3 gap-4 xs:gap-6 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 gap-4 xs:gap-6 sm:gap-12">
             <div className="flex justify-center items-center">
               <Image
                 src={backedByBtcStartupLab}
