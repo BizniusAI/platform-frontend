@@ -10,7 +10,7 @@ import GradientBlock from '@/components/GradientBlock'
 import GradientText from '@/components/GradientText'
 import { H1, H2, H3 } from '@/components/Headings'
 import Layout from '@/components/Layout'
-import { defaultLocales } from '@/constants'
+import { defaultLocales, gradientTextClassnames } from '@/constants'
 
 // images
 import backedByAppWorks from '@public/img/homepage/backedBy.appWorks.png'
@@ -121,12 +121,93 @@ const Home: NextPage = () => {
               </span>
             </Trans>
           </H2>
+
+          <div className="grid grid-cols-5 gap-4 py-8 sm:py-12">
+            <div className="col-span-2">
+              <GradientBlock className="h-full px-4 bg-blend-hue">
+                <div className="flex">
+                  <H3 className={gradientTextClassnames}>
+                    <Trans
+                      i18nKey="intro.solution1.title"
+                      ns="homepage"
+                    ></Trans>
+                  </H3>
+                </div>
+
+                <p className="mt-3">{t('intro.solution1.description')}</p>
+              </GradientBlock>
+            </div>
+
+            <div className="col-span-3">
+              <div className="flex flex-col gap-2">
+                <GradientBlock className="px-4 bg-blend-hue">
+                  <div className="flex">
+                    <H3 className={gradientTextClassnames}>
+                      <Trans
+                        i18nKey="intro.solution2.title"
+                        ns="homepage"
+                      ></Trans>
+                    </H3>
+                  </div>
+
+                  <p className="mt-3">{t('intro.solution2.description')}</p>
+                </GradientBlock>
+
+                <GradientBlock className="px-4 bg-blend-hue">
+                  <div className="flex">
+                    <H3 className={gradientTextClassnames}>
+                      <Trans
+                        i18nKey="intro.solution3.title"
+                        ns="homepage"
+                      ></Trans>
+                    </H3>
+                  </div>
+
+                  <p className="mt-3">{t('intro.solution3.description')}</p>
+                </GradientBlock>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 
       <section className="my-16">
         <Container>
           <H2>{t('mechanism.title')}</H2>
+
+          <div className="grid grid-cols-2 gap-4 py-8 sm:py-12">
+            <div className="rounded-[2rem]"></div>
+
+            <div className="flex flex-col gap-4">
+              <div>
+                <H3 className={gradientTextClassnames}>
+                  <Trans i18nKey="mechanism.step1.title" ns="homepage"></Trans>
+                </H3>
+                <p className="mt-2">{t('mechanism.step1.description')}</p>
+              </div>
+
+              <div>
+                <H3 className={gradientTextClassnames}>
+                  <Trans i18nKey="mechanism.step2.title" ns="homepage"></Trans>
+                </H3>
+                <p className="mt-2">{t('mechanism.step2.description')}</p>
+              </div>
+
+              <div>
+                <H3 className={gradientTextClassnames}>
+                  <Trans i18nKey="mechanism.step3.title" ns="homepage"></Trans>
+                </H3>
+                <p className="mt-2">{t('mechanism.step3.description')}</p>
+              </div>
+
+              <div>
+                <H3 className={gradientTextClassnames}>
+                  <Trans i18nKey="mechanism.step4.title" ns="homepage"></Trans>
+                </H3>
+                <p className="mt-2">{t('mechanism.step4.description')}</p>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

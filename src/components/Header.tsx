@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,10 +8,10 @@ import { useTranslation } from 'next-i18next'
 import logo from '@public/img/sefoFinanceLogo.png'
 
 import Container from '@/components/Container'
-import { languages, twitterLink } from '@/constants'
+import { twitterLink } from '@/constants'
 
 const Header = (): JSX.Element => {
-  const { t, i18n } = useTranslation(['menu', 'common'])
+  const { t } = useTranslation(['menu', 'common'])
   const [isMobileHidden, setIsMobileHidden] = useState<boolean>(true)
 
   return (
@@ -46,17 +45,6 @@ const Header = (): JSX.Element => {
                   </div>
                 </a>
               </Link>
-
-              <div
-                className="flex items-center gap-2 px-1"
-                // onClick={changeLocale}
-              >
-                <FontAwesomeIcon className="w-4" icon={faEarthAmericas} />
-                <span className="inline-flex gap-2">
-                  {languages[i18n.language?.toLocaleLowerCase()]}
-                  {/*<FontAwesomeIcon className="w-3" icon={faRightLeft} />*/}
-                </span>
-              </div>
             </div>
 
             {/* Mobile menu button */}
