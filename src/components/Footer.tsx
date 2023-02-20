@@ -5,7 +5,7 @@ const Footer = (): JSX.Element => {
   const { t } = useTranslation(['common'])
 
   return (
-    <footer className="bg-white py-8">
+    <footer className="py-8">
       <Container>
         <h5 className="text-xs text-center select-none">
           {t('footer.slogan')}

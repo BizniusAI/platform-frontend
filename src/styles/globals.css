@@ -19,45 +19,6 @@ a {
   box-sizing: border-box;
 }
 
-/*
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
-*/
-
-.bg-blue-radial {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(0, 88, 248, 0.6) 0%,
-    rgba(0, 88, 248, 0) 100%
-  );
-  filter: blur(1.5rem);
-}
-
-.bg-yellow-radial {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(242, 169, 0, 0.6) 0%,
-    rgba(242, 169, 0, 0) 100%
-  );
-  filter: blur(1.5rem);
-}
-
-.bg-purple-radial {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(127, 37, 225, 0.4) 0%,
-    rgba(198, 0, 248, 0) 100%
-  );
-  filter: blur(1rem);
-}
-
 .container {
   width: 100%;
   max-width: 1200px;
