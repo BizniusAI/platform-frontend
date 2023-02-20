@@ -2,7 +2,6 @@ import { ReactNode } from 'react'
 
 type TProps = {
   children?: ReactNode
-  className?: string
 }
 
 const GradientText = ({ children }: TProps) => {

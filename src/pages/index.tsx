@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
 import Container from '@/components/Container'
+import GradientBlock from '@/components/GradientBlock'
 import GradientText from '@/components/GradientText'
 import { H1, H2, H3 } from '@/components/Headings'
 import Layout from '@/components/Layout'
@@ -133,7 +134,7 @@ const Home: NextPage = () => {
         <Container>
           <H2 className="text-center">{t('team.title')}</H2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 gap-4 sm:gap-8 text-center">
-            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+            <GradientBlock className="flex flex-col pb-4">
               <div>
                 <Image src={memberAidan} layout="intrinsic" />
               </div>
@@ -141,8 +142,9 @@ const Home: NextPage = () => {
                 <GradientText>{t('team.aidan.name')}</GradientText>
               </H3>
               <p className="text-sm font-bold">{t('team.aidan.title')}</p>
-            </div>
-            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+            </GradientBlock>
+
+            <GradientBlock className="flex flex-col pb-4">
               <div>
                 <Image src={memberWade} layout="intrinsic" />
               </div>
@@ -150,8 +152,9 @@ const Home: NextPage = () => {
                 <GradientText>{t('team.wade.name')}</GradientText>
               </H3>
               <p className="text-sm font-bold">{t('team.wade.title')}</p>
-            </div>
-            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+            </GradientBlock>
+
+            <GradientBlock className="flex flex-col pb-4">
               <div>
                 <Image src={memberAndy} layout="intrinsic" />
               </div>
@@ -159,8 +162,9 @@ const Home: NextPage = () => {
                 <GradientText>{t('team.andy.name')}</GradientText>
               </H3>
               <p className="text-sm font-bold">{t('team.andy.title')}</p>
-            </div>
-            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+            </GradientBlock>
+
+            <GradientBlock className="flex flex-col pb-4">
               <div>
                 <Image src={memberKurt} layout="intrinsic" />
               </div>
@@ -168,8 +172,9 @@ const Home: NextPage = () => {
                 <GradientText>{t('team.kurt.name')}</GradientText>
               </H3>
               <p className="text-sm font-bold">{t('team.kurt.title')}</p>
-            </div>
-            <div className="flex flex-col p-2 pb-4 bg-gradient-to-br from-sefo-purple-700 to-[#50429F]/40 rounded-[2rem] shadow-md">
+            </GradientBlock>
+
+            <GradientBlock className="flex flex-col pb-4">
               <div>
                 <Image src={memberShawn} layout="intrinsic" />
               </div>
@@ -177,7 +182,7 @@ const Home: NextPage = () => {
                 <GradientText>{t('team.shawn.name')}</GradientText>
               </H3>
               <p className="text-sm font-bold">{t('team.shawn.title')}</p>
-            </div>
+            </GradientBlock>
           </div>
         </Container>
       </section>
