@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
-// import Image from 'next/image'
+import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
@@ -11,7 +11,9 @@ import Layout from '@/components/Layout'
 import { defaultLocales } from '@/constants'
 
 // images
-// import mainBitcoin from '@public/img/home/main.bitcoin.png'
+import backedByAppWorks from '@public/img/homepage/backedBy.appWorks.png'
+import backedByBtcStartupLab from '@public/img/homepage/backedBy.btcStartupLab.png'
+import backedByWaterdripCapital from '@public/img/homepage/backedBy.waterdripCapital.png'
 
 const Home: NextPage = () => {
   const [emailAddress, setEmailAddress] = useState<string>('')
@@ -170,16 +172,34 @@ const Home: NextPage = () => {
         </Container>
       </section>
 
-      <section className="py-12 bg-gray-100">
+      <section>
         <Container>
-          <H2 className="text-center">{t('partners.title')}</H2>
+          <H2 className="text-center">{t('backedBy.title')}</H2>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div></div>
+          <div className="grid grid-cols-1 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 sm:grid-cols-3 gap-4 xs:gap-6 sm:gap-12">
+            <div className="flex justify-center items-center">
+              <Image
+                src={backedByBtcStartupLab}
+                layout="intrinsic"
+                alt={t('backedBy.btcStartupLab.name')}
+              />
+            </div>
 
-            <div></div>
+            <div className="flex justify-center items-center">
+              <Image
+                src={backedByAppWorks}
+                layout="intrinsic"
+                alt={t('backedBy.appWorks.name')}
+              />
+            </div>
 
-            <div></div>
+            <div className="flex justify-center items-center">
+              <Image
+                src={backedByWaterdripCapital}
+                layout="intrinsic"
+                alt={t('backedBy.waterdripCapital.name')}
+              />
+            </div>
           </div>
         </Container>
       </section>
