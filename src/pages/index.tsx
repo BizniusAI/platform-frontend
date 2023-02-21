@@ -3,13 +3,14 @@ import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import Container from '@/components/Container'
 import GradientBlock from '@/components/GradientBlock'
 import GradientText from '@/components/GradientText'
 import { H1, H2, H3 } from '@/components/Headings'
 import Layout from '@/components/Layout'
+import VideoPlayer from '@/components/VideoPlayer'
 import { defaultLocales, gradientTextClassnames } from '@/constants'
 
 // images
@@ -33,7 +34,13 @@ import memberWade from '@public/img/homepage/member.Wade.png'
 const Home: NextPage = () => {
   const [emailAddress, setEmailAddress] = useState<string>('')
   const [subscribed, setSubscribed] = useState<boolean>(false)
+  const [mechanismStep, setMechanismStep] = useState<1 | 2 | 3 | 4>(1)
   const { t } = useTranslation(['homepage'])
+  const mechanismStepDiv = useRef<HTMLDivElement>(null)
+  const mechanismStep1Ref = useRef<HTMLDivElement>(null)
+  const mechanismStep2Ref = useRef<HTMLDivElement>(null)
+  const mechanismStep3Ref = useRef<HTMLDivElement>(null)
+  const mechanismStep4Ref = useRef<HTMLDivElement>(null)
 
   const sendEmail = async () => {
     const re =
@@ -68,6 +75,38 @@ const Home: NextPage = () => {
         })
     }
   }
+
+  useEffect(() => {
+    const height = mechanismStepDiv.current!.clientHeight
+
+    if (mechanismStep === 1) {
+      mechanismStepDiv.current?.scroll({
+        top: mechanismStep1Ref.current!.offsetTop,
+        behavior: 'smooth',
+      })
+    } else if (mechanismStep === 2) {
+      mechanismStepDiv.current?.scroll({
+        top:
+          mechanismStep2Ref.current!.offsetTop -
+          (height - mechanismStep2Ref.current!.clientHeight) / 2,
+        behavior: 'smooth',
+      })
+    } else if (mechanismStep === 3) {
+      mechanismStepDiv.current?.scroll({
+        top:
+          mechanismStep3Ref.current!.offsetTop -
+          (height - mechanismStep3Ref.current!.clientHeight) / 2,
+        behavior: 'smooth',
+      })
+    } else if (mechanismStep === 4) {
+      mechanismStepDiv.current?.scroll({
+        top:
+          mechanismStep4Ref.current!.offsetTop -
+          (height - mechanismStep2Ref.current!.clientHeight) / 2,
+        behavior: 'smooth',
+      })
+    }
+  }, [mechanismStep])
 
   return (
     <Layout>
@@ -262,35 +301,113 @@ const Home: NextPage = () => {
           <H2>{t('mechanism.title')}</H2>
 
           <div className="grid grid-cols-2 gap-4 py-8 sm:py-12">
-            <div className="rounded-[2rem]"></div>
+            <div className="flex flex-col relative">
+              <VideoPlayer
+                videoId={1}
+                nextVideoId={2}
+                step={mechanismStep}
+                setStep={setMechanismStep}
+              />
 
-            <div className="flex flex-col gap-4">
-              <div>
-                <H3 className={gradientTextClassnames}>
-                  <Trans i18nKey="mechanism.step1.title" ns="homepage"></Trans>
-                </H3>
-                <p className="mt-2">{t('mechanism.step1.description')}</p>
-              </div>
+              <VideoPlayer
+                videoId={2}
+                nextVideoId={3}
+                step={mechanismStep}
+                setStep={setMechanismStep}
+              />
 
-              <div>
-                <H3 className={gradientTextClassnames}>
-                  <Trans i18nKey="mechanism.step2.title" ns="homepage"></Trans>
-                </H3>
-                <p className="mt-2">{t('mechanism.step2.description')}</p>
-              </div>
+              <VideoPlayer
+                videoId={3}
+                nextVideoId={4}
+                step={mechanismStep}
+                setStep={setMechanismStep}
+              />
 
-              <div>
-                <H3 className={gradientTextClassnames}>
-                  <Trans i18nKey="mechanism.step3.title" ns="homepage"></Trans>
-                </H3>
-                <p className="mt-2">{t('mechanism.step3.description')}</p>
-              </div>
+              <VideoPlayer
+                videoId={4}
+                nextVideoId={1}
+                step={mechanismStep}
+                setStep={setMechanismStep}
+              />
+            </div>
 
-              <div>
-                <H3 className={gradientTextClassnames}>
-                  <Trans i18nKey="mechanism.step4.title" ns="homepage"></Trans>
-                </H3>
-                <p className="mt-2">{t('mechanism.step4.description')}</p>
+            <div className="flex flex-col gap-2">
+              <div
+                className="relative h-64 overflow-hidden"
+                ref={mechanismStepDiv}
+              >
+                <div
+                  className={classNames(
+                    'px-6 py-2 transition-all duration-400 ease-in-out select-none',
+                    mechanismStep === 1
+                      ? 'bg-white/10 rounded-2xl opacity-100'
+                      : 'opacity-20'
+                  )}
+                  ref={mechanismStep1Ref}
+                >
+                  <H3 className={gradientTextClassnames}>
+                    <Trans
+                      i18nKey="mechanism.step1.title"
+                      ns="homepage"
+                    ></Trans>
+                  </H3>
+                  <p className="mt-2">{t('mechanism.step1.description')}</p>
+                </div>
+
+                <div
+                  className={classNames(
+                    'px-6 py-2 transition-all duration-400 ease-in-out select-none',
+                    mechanismStep === 2
+                      ? 'bg-white/10 rounded-2xl opacity-100'
+                      : 'opacity-20'
+                  )}
+                  ref={mechanismStep2Ref}
+                >
+                  <H3 className={gradientTextClassnames}>
+                    <Trans
+                      i18nKey="mechanism.step2.title"
+                      ns="homepage"
+                    ></Trans>
+                  </H3>
+                  <p className="mt-2">{t('mechanism.step2.description')}</p>
+                </div>
+
+                <div
+                  className={classNames(
+                    'px-6 py-2 transition-all duration-400 ease-in-out select-none',
+                    mechanismStep === 3
+                      ? 'bg-white/10 rounded-2xl opacity-100'
+                      : 'opacity-20'
+                  )}
+                  ref={mechanismStep3Ref}
+                >
+                  <H3 className={gradientTextClassnames}>
+                    <Trans
+                      i18nKey="mechanism.step3.title"
+                      ns="homepage"
+                    ></Trans>
+                  </H3>
+                  <p className="mt-2">{t('mechanism.step3.description')}</p>
+                </div>
+
+                <div
+                  className={classNames(
+                    'px-6 py-2 transition-all duration-400 ease-in-out select-none',
+                    mechanismStep === 4
+                      ? 'bg-white/10 rounded-2xl opacity-100'
+                      : 'opacity-20'
+                  )}
+                  ref={mechanismStep4Ref}
+                >
+                  <H3 className={gradientTextClassnames}>
+                    <Trans
+                      i18nKey="mechanism.step4.title"
+                      ns="homepage"
+                    ></Trans>
+                  </H3>
+                  <p className="mt-2">{t('mechanism.step4.description')}</p>
+                </div>
+                <div className="h-64"></div>
               </div>
             </div>
           </div>
