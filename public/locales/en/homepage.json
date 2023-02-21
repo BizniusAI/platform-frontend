@@ -33,5 +33,8 @@
   "team.wade.name": "Wade",
   "team.wade.title": "Lead Engineer",
 
-  "backedBy.title": "Backed By"
+  "backedBy.title": "Backed By",
+  "backedBy.btcStartupLab.name": "BTC Startup Lab",
+  "backedBy.appWorks.name": "AppWorks",
+  "backedBy.tacc.name": "TAcc+ (Taiwan Accelerator Plus)"
 }

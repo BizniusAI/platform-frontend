@@ -15,7 +15,7 @@ import { defaultLocales, gradientTextClassnames } from '@/constants'
 // images
 import backedByAppWorks from '@public/img/homepage/backedBy.appWorks.png'
 import backedByBtcStartupLab from '@public/img/homepage/backedBy.btcStartupLab.png'
-import backedByWaterdripCapital from '@public/img/homepage/backedBy.waterdripCapital.png'
+import backedByTacc from '@public/img/homepage/backedBy.tacc.png'
 import memberAidan from '@public/img/homepage/member.Aidan.png'
 import memberAndy from '@public/img/homepage/member.Andy.png'
 import memberKurt from '@public/img/homepage/member.Kurt.png'
@@ -291,9 +291,9 @@ const Home: NextPage = () => {
 
             <div className="flex justify-center items-center">
               <Image
-                src={backedByWaterdripCapital}
+                src={backedByTacc}
                 layout="intrinsic"
-                alt={t('backedBy.waterdripCapital.name')}
+                alt={t('backedBy.tacc.name')}
               />
             </div>
           </div>
