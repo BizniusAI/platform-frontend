@@ -13,6 +13,14 @@ import Layout from '@/components/Layout'
 import { defaultLocales, gradientTextClassnames } from '@/constants'
 
 // images
+import marble from '@public/img/homepage/marble.png'
+import introImprovementBase from '@public/img/homepage/intro.improvement.base.png'
+import introImprovementLn from '@public/img/homepage/intro.improvement.ln.png'
+import introNonCustodialBase from '@public/img/homepage/intro.nonCustodial.base.png'
+import introNonCustodialBitcoin from '@public/img/homepage/intro.nonCustodial.bitcoin.png'
+import introUtilizationBase from '@public/img/homepage/intro.utilization.base.png'
+import introUtilizationFire from '@public/img/homepage/intro.utilization.fire.png'
+import introUtilizationRocket from '@public/img/homepage/intro.utilization.rocket.png'
 import backedByAppWorks from '@public/img/homepage/backedBy.appWorks.png'
 import backedByBtcStartupLab from '@public/img/homepage/backedBy.btcStartupLab.png'
 import backedByTacc from '@public/img/homepage/backedBy.tacc.png'
@@ -101,12 +109,32 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-
-              <div className="absolute -top-12 -left-12 w-44 h-44 bg-blue-radial"></div>
             </div>
 
-            <div className="hidden md:block col-span-2">
-              <div className="relative h-full"></div>
+            <div className="col-span-2 flex justify-center items-center">
+              <div className="relative w-56 h-56">
+                <div className="absolute right-0 w-1/2 h-1/2" id="marble-left">
+                  <Image src={marble} layout="fill" />
+                </div>
+
+                <div className="absolute w-1/2 h-1/2" id="marble-down">
+                  <Image src={marble} layout="fill" />
+                </div>
+
+                <div
+                  className="absolute right-0 bottom-0 w-1/2 h-1/2"
+                  id="marble-up"
+                >
+                  <Image src={marble} layout="fill" />
+                </div>
+
+                <div
+                  className="absolute bottom-0 w-1/2 h-1/2"
+                  id="marble-right"
+                >
+                  <Image src={marble} layout="fill" />
+                </div>
+              </div>
             </div>
           </section>
         </Container>
@@ -125,32 +153,77 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-5 gap-4 py-8 sm:py-12">
             <div className="col-span-2">
               <GradientBlock className="h-full px-4 bg-blend-hue">
-                <div className="flex">
-                  <H3 className={gradientTextClassnames}>
-                    <Trans
-                      i18nKey="intro.solution1.title"
-                      ns="homepage"
-                    ></Trans>
-                  </H3>
-                </div>
+                <div className="flex flex-col gap-2">
+                  <div className="h-52 flex justify-center">
+                    <div className="relative w-2/3">
+                      <div className="absolute bottom-0">
+                        <Image src={introNonCustodialBase} layout="intrinsic" />
+                      </div>
+                      <div
+                        className="absolute bottom-32"
+                        id="non-custodial-bitcoin"
+                      >
+                        <Image
+                          src={introNonCustodialBitcoin}
+                          layout="intrinsic"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex">
+                      <H3 className={gradientTextClassnames}>
+                        <Trans
+                          i18nKey="intro.solution1.title"
+                          ns="homepage"
+                        ></Trans>
+                      </H3>
+                    </div>
 
-                <p className="mt-3">{t('intro.solution1.description')}</p>
+                    <p className="mt-3">{t('intro.solution1.description')}</p>
+                  </div>
+                </div>
               </GradientBlock>
             </div>
 
             <div className="col-span-3">
               <div className="flex flex-col gap-2">
                 <GradientBlock className="px-4 bg-blend-hue">
-                  <div className="flex">
-                    <H3 className={gradientTextClassnames}>
-                      <Trans
-                        i18nKey="intro.solution2.title"
-                        ns="homepage"
-                      ></Trans>
-                    </H3>
-                  </div>
+                  <div className="grid grid-cols-5 gap-2">
+                    <div className="col-span-3">
+                      <div className="flex">
+                        <H3 className={gradientTextClassnames}>
+                          <Trans
+                            i18nKey="intro.solution2.title"
+                            ns="homepage"
+                          ></Trans>
+                        </H3>
+                      </div>
 
-                  <p className="mt-3">{t('intro.solution2.description')}</p>
+                      <p className="mt-3">{t('intro.solution2.description')}</p>
+                    </div>
+
+                    <div className="col-span-2 relative">
+                      <div className="absolute bottom-0">
+                        <Image src={introUtilizationBase} layout="intrinsic" />
+                      </div>
+                      <div
+                        className="absolute bottom-[3.25rem]"
+                        id="utilization-fire"
+                      >
+                        <Image src={introUtilizationFire} layout="intrinsic" />
+                      </div>
+                      <div
+                        className="absolute bottom-[2.75rem]"
+                        id="utilization-rocket"
+                      >
+                        <Image
+                          src={introUtilizationRocket}
+                          layout="intrinsic"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </GradientBlock>
 
                 <GradientBlock className="px-4 bg-blend-hue">
@@ -163,7 +236,20 @@ const Home: NextPage = () => {
                     </H3>
                   </div>
 
-                  <p className="mt-3">{t('intro.solution3.description')}</p>
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="col-span-2">
+                      <p className="mt-3">{t('intro.solution3.description')}</p>
+                    </div>
+
+                    <div className="relative">
+                      <div className="absolute bottom-0">
+                        <Image src={introImprovementBase} layout="intrinsic" />
+                      </div>
+                      <div className="absolute bottom-3" id="improvement-lego">
+                        <Image src={introImprovementLn} layout="intrinsic" />
+                      </div>
+                    </div>
+                  </div>
                 </GradientBlock>
               </div>
             </div>

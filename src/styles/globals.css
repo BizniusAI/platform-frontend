@@ -103,6 +103,145 @@ a {
   width: 80%;
 }
 
+#marble-down {
+  animation: marble-down 5s infinite;
+}
+
+@keyframes marble-down {
+  0%,
+  10%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  54%,
+  56% {
+    transform: translateY(100%);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#marble-up {
+  animation: marble-up 5s infinite;
+}
+
+@keyframes marble-up {
+  0%,
+  10%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  54%,
+  56% {
+    transform: translateY(-100%);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#marble-left {
+  animation: marble-left 5s infinite;
+}
+
+@keyframes marble-left {
+  0%,
+  10%,
+  100% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  54%,
+  56% {
+    transform: translateX(-100%);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#marble-right {
+  animation: marble-right 5s infinite;
+}
+
+@keyframes marble-right {
+  0%,
+  10%,
+  100% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  54%,
+  56% {
+    transform: translateX(100%);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#non-custodial-bitcoin {
+  animation: non-custodial-bitcoin 5s infinite;
+}
+
+@keyframes non-custodial-bitcoin {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-1.5rem);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#utilization-fire {
+  animation: utilization-fire 5s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes utilization-fire {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#utilization-rocket {
+  animation: utilization-rocket 5s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes utilization-rocket {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-2rem);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
+#improvement-lego {
+  animation: improvement-lego 5s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes improvement-lego {
+  0%,
+  100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(-2rem);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
+
 @media (max-width: 800px) {
   .wrapper {
     width: 90%;
