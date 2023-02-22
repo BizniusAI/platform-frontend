@@ -37,12 +37,19 @@ const Header = (): JSX.Element => {
             <div className="hidden md:block md:grow md:order-3"></div>
 
             <div className="hidden md:flex md:gap-8 text-sm font-semibold tracking-wider md:order-4">
+              <div className="flex flex-col items-center select-none cursor-not-allowed">
+                <div className="text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200">
+                  White Paper
+                </div>
+
+                <div className="-mt-1 text-xs bg-clip-text text-transparent bg-gradient-to-b from-neutral-200">
+                  (coming soon)
+                </div>
+              </div>
+
               <Link href={twitterLink}>
                 <a target="_blank" rel="noopener noreferrer">
-                  <div className="flex items-center gap-2 px-1">
-                    <FontAwesomeIcon className="w-4" icon={faTwitter} />
-                    Twitter
-                  </div>
+                  <div className="flex items-center text-lg">Twitter</div>
                 </a>
               </Link>
             </div>
