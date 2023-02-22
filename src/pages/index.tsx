@@ -45,12 +45,22 @@ const mechanisms = [
 ]
 
 const Home: NextPage = () => {
+  const [observedWidth, setObservedWidth] = useState(0)
+  const [observedHeight, setObservedHeight] = useState(0)
   const [emailAddress, setEmailAddress] = useState<string>('')
   const [subscribed, setSubscribed] = useState<boolean>(false)
   const [mechanismStep, setMechanismStep] = useState<1 | 2 | 3 | 4>(1)
   const { t } = useTranslation(['homepage'])
   const mechanismStepDiv = useRef<HTMLDivElement>(null)
   const mechanismSteps = useRef<HTMLDivElement[]>(new Array(4).fill(null))
+
+  const observedDiv = useRef<HTMLDivElement>(null)
+  const handleResize = () => {
+    if (observedDiv.current!.offsetWidth !== observedWidth) {
+      setObservedWidth(observedDiv.current!.offsetWidth)
+      setObservedHeight((observedDiv.current!.offsetWidth * 608) / 1080)
+    }
+  }
 
   const sendEmail = async () => {
     const re =
@@ -87,6 +97,13 @@ const Home: NextPage = () => {
   }
 
   useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => window.removeEventListener('resize', handleResize)
+  })
+
+  useEffect(() => {
     const height = mechanismStepDiv.current!.clientHeight
     mechanismStepDiv.current?.scroll({
       top:
@@ -115,8 +132,8 @@ const Home: NextPage = () => {
         </div>
 
         <Container className="relative">
-          <section className="h-screen relative md:grid md:grid-cols-5 items-center py-16">
-            <div className="col-span-3 relative">
+          <section className="h-screen relative flex flex-col gap-4 md:gap-0 md:grid md:grid-cols-5 justify-center items-center py-16">
+            <div className="col-span-3 relative order-2 md:order-1">
               <div>
                 <H1 className="mt-2 md:max-w-[30rem] text-center md:text-left sm:leading-[3rem]">
                   <Trans i18nKey="main.slogan" ns="homepage"></Trans>
@@ -153,8 +170,8 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div className="col-span-2 flex justify-center items-center">
-              <div className="relative w-56 h-56">
+            <div className="col-span-2 flex justify-center items-center order-1 md:order-2">
+              <div className="relative w-44 sm:w-52 md:w-48 lg:w-56 h-44 sm:h-52 md:h-48 lg:h-56">
                 <div className="absolute right-0 w-1/2 h-1/2" id="marble-left">
                   <Image src={marble} layout="fill" />
                 </div>
@@ -183,7 +200,7 @@ const Home: NextPage = () => {
       </div>
 
       <section className="mb-16 relative">
-        <div className="absolute -top-36 w-full">
+        <div className="absolute lg:-top-36 w-full">
           <Image src={bgEllipse4} layout="responsive" />
         </div>
 
@@ -196,12 +213,12 @@ const Home: NextPage = () => {
             </Trans>
           </H2>
 
-          <div className="grid grid-cols-5 gap-4 py-8 sm:py-12">
-            <div className="col-span-2">
-              <GradientBlock className="h-full px-4 bg-blend-hue">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4 px-0 sm:px-16 md:px-24 lg:px-0 py-8 sm:py-12 sm:pt-16">
+            <div className="lg:col-span-2">
+              <GradientBlock className="h-full px-6 pb-4">
                 <div className="flex flex-col gap-2">
-                  <div className="h-52 flex justify-center">
-                    <div className="relative w-2/3">
+                  <div className="h-56 pl-12 lg:pl-0 flex justify-center">
+                    <div className="relative w-2/3 lg:w-4/5">
                       <div className="absolute bottom-0">
                         <Image src={introNonCustodialBase} layout="intrinsic" />
                       </div>
@@ -232,9 +249,9 @@ const Home: NextPage = () => {
               </GradientBlock>
             </div>
 
-            <div className="col-span-3">
-              <div className="flex flex-col gap-2">
-                <GradientBlock className="px-4 bg-blend-hue">
+            <div className="lg:col-span-3">
+              <div className="flex flex-col gap-8 lg:gap-2">
+                <GradientBlock className="px-6 pb-4">
                   <div className="grid grid-cols-5 gap-2">
                     <div className="col-span-3">
                       <div className="flex">
@@ -272,7 +289,7 @@ const Home: NextPage = () => {
                   </div>
                 </GradientBlock>
 
-                <GradientBlock className="px-4 bg-blend-hue">
+                <GradientBlock className="px-6 pb-4">
                   <div className="flex">
                     <H3 className={gradientTextClassnames}>
                       <Trans
@@ -309,10 +326,16 @@ const Home: NextPage = () => {
         </div>
 
         <Container className="relative">
-          <H2>{t('mechanism.title')}</H2>
+          <H2 className="text-center lg:text-left">{t('mechanism.title')}</H2>
 
-          <div className="grid grid-cols-2 gap-4 py-8 sm:pb-40">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-4 py-8 lg:pb-40 sm:px-6 md:px-12 lg:px-0">
             <div className="flex flex-col relative">
+              <div
+                ref={observedDiv}
+                className="invisible w-full"
+                style={{ height: observedHeight }}
+              ></div>
+
               <VideoPlayer
                 videoId={1}
                 nextVideoId={2}
@@ -344,7 +367,7 @@ const Home: NextPage = () => {
 
             <div className="flex flex-col gap-2">
               <div
-                className="relative h-64 overflow-hidden"
+                className="relative h-[18rem] min-[450px]:h-52 sm:h-40 lg:h-64 overflow-hidden"
                 ref={mechanismStepDiv}
               >
                 {mechanisms.map((item) => (
@@ -359,7 +382,7 @@ const Home: NextPage = () => {
                   />
                 ))}
 
-                <div className="h-64"></div>
+                <div className="h-52 sm:h-40 lg:h-64"></div>
               </div>
             </div>
           </div>
@@ -369,9 +392,9 @@ const Home: NextPage = () => {
       <section className="my-16">
         <Container>
           <H2 className="text-center">{t('team.title')}</H2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 py-8 sm:py-24 px-8 sm:px-0 gap-4 sm:gap-8 text-center">
-            <GradientBlock className="flex flex-col pb-4">
-              <div>
+          <div className="flex flex-wrap justify-center py-8 sm:py-24 gap-4 sm:gap-8 text-center">
+            <GradientBlock className="min-[450px]:basis-2/5 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 flex flex-col pb-4">
+              <div className="mx-auto w-1/2 min-[450px]:w-full">
                 <Image src={memberAidan} layout="intrinsic" />
               </div>
               <H3>
@@ -380,8 +403,8 @@ const Home: NextPage = () => {
               <p className="text-sm font-bold">{t('team.aidan.title')}</p>
             </GradientBlock>
 
-            <GradientBlock className="flex flex-col pb-4">
-              <div>
+            <GradientBlock className="min-[450px]:basis-2/5 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 flex flex-col pb-4">
+              <div className="mx-auto w-1/2 min-[450px]:w-full">
                 <Image src={memberWade} layout="intrinsic" />
               </div>
               <H3>
@@ -390,8 +413,8 @@ const Home: NextPage = () => {
               <p className="text-sm font-bold">{t('team.wade.title')}</p>
             </GradientBlock>
 
-            <GradientBlock className="flex flex-col pb-4">
-              <div>
+            <GradientBlock className="min-[450px]:basis-2/5 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 flex flex-col pb-4">
+              <div className="mx-auto w-1/2 min-[450px]:w-full">
                 <Image src={memberAndy} layout="intrinsic" />
               </div>
               <H3>
@@ -400,8 +423,8 @@ const Home: NextPage = () => {
               <p className="text-sm font-bold">{t('team.andy.title')}</p>
             </GradientBlock>
 
-            <GradientBlock className="flex flex-col pb-4">
-              <div>
+            <GradientBlock className="min-[450px]:basis-2/5 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 flex flex-col pb-4">
+              <div className="mx-auto w-1/2 min-[450px]:w-full">
                 <Image src={memberKurt} layout="intrinsic" />
               </div>
               <H3>
@@ -410,8 +433,8 @@ const Home: NextPage = () => {
               <p className="text-sm font-bold">{t('team.kurt.title')}</p>
             </GradientBlock>
 
-            <GradientBlock className="flex flex-col pb-4">
-              <div>
+            <GradientBlock className="min-[450px]:basis-2/5 sm:basis-1/3 md:basis-1/4 lg:basis-1/6 flex flex-col pb-4">
+              <div className="mx-auto w-1/2 min-[450px]:w-full">
                 <Image src={memberShawn} layout="intrinsic" />
               </div>
               <H3>
@@ -427,7 +450,7 @@ const Home: NextPage = () => {
         <Container>
           <H2 className="text-center">{t('backedBy.title')}</H2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 py-8 sm:py-24 px-8 sm:px-0 gap-4 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 py-20 sm:py-24 min-[320px]:px-16 min-[480px]:px-24 px-28 sm:px-0 gap-8 sm:gap-12">
             <div className="flex justify-center items-center">
               <Image
                 src={backedByBtcStartupLab}

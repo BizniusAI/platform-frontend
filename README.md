@@ -36,3 +36,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Potential Packages
 
 - [Chakra UI](https://chakra-ui.com/getting-started)
+
+## ffmpeg
+
+- `ffmpeg -i mechanism.step1.mp4 -c:v libx265 -crf 20 -vf scale=1080:-2 -preset veryslow -tag:v hvc1 -movflags faststart -an mechanism.step1-2.mp4`
+- `ffmpeg -i mechanism.step1.mp4 -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -c:a libopus mechanism.step1.webm `

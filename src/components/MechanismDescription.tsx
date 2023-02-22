@@ -19,7 +19,7 @@ const MechanismDescription = forwardRef<Ref, Props>(
       <div
         ref={ref}
         className={classNames(
-          'px-6 py-2 transition-all duration-400 ease-in-out select-none',
+          'px-6 py-2 transition-all duration-700 ease-in-out select-none',
           props.step === props.mechanismId
             ? 'bg-white/10 rounded-2xl opacity-100'
             : 'opacity-20'
