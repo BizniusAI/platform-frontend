@@ -36,7 +36,7 @@ const Header = (): JSX.Element => {
             </div>
             <div className="hidden md:block md:grow md:order-3"></div>
 
-            <div className="hidden md:flex md:gap-8 text-sm font-semibold tracking-wider md:order-4">
+            <div className="hidden md:flex items-center md:gap-8 text-sm font-semibold tracking-wider md:order-4">
               <div className="flex flex-col items-center select-none cursor-not-allowed">
                 <div className="text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200">
                   White Paper

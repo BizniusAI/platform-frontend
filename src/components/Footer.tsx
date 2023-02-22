@@ -12,7 +12,7 @@ const Footer = (): JSX.Element => {
   const { t } = useTranslation(['common'])
 
   return (
-    <footer className="relative py-12 border-t-2 border-sefo-purple-300">
+    <footer className="relative py-6 min-[450px]:py-12 border-t-2 border-sefo-purple-300">
       <div className="absolute -top-[0.7rem] w-full flex justify-center">
         <div className="w-6 h-6">
           <Image src={footerStar} layout="responsive" />
@@ -24,7 +24,7 @@ const Footer = (): JSX.Element => {
       </div>
 
       <Container className="relative">
-        <div className="flex justify-between items-center px-12 py-3 h-16">
+        <div className="flex flex-col min-[450px]:flex-row gap-2 justify-between items-center px-12 py-3 h-28 min-[450px]:h-16">
           <div className="flex w-[6.5rem] h-full">
             <a className="relative w-full h-full inline-flex items-center">
               <Image

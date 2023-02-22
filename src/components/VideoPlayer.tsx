@@ -18,7 +18,7 @@ const VideoPlayer = ({
   return (
     <div
       className={classNames(
-        'absolute w-full rounded-[2rem] overflow-hidden transition-all duration-400 ease-in-out',
+        'absolute w-full rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out',
         step === videoId ? 'opacity-100 visible' : 'opacity-0 invisible'
       )}
     >
