@@ -1,9 +1,11 @@
 import classNames from 'classnames'
 import type { GetStaticProps, NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { Trans, useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useEffect, useRef, useState } from 'react'
+const ReactPlayer = dynamic(() => import('react-player/lazy'), { ssr: false })
 
 import Container from '@/components/Container'
 import GradientBlock from '@/components/GradientBlock'
@@ -197,6 +199,20 @@ const Home: NextPage = () => {
             </div>
           </section>
         </Container>
+
+        <div className="absolute bottom-8 w-full flex justify-center">
+          <div className="w-20 h-20">
+            <ReactPlayer
+              url={`/videos/scroll.mp4`}
+              width="auto"
+              height="auto"
+              playing={true}
+              muted={true}
+              loop={true}
+              playsinline={true}
+            />
+          </div>
+        </div>
       </div>
 
       <section className="mb-16 relative">
