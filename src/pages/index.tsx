@@ -217,8 +217,8 @@ const Home: NextPage = () => {
             <div className="lg:col-span-2">
               <GradientBlock className="h-full px-6 pb-4">
                 <div className="flex flex-col gap-2">
-                  <div className="h-52 flex justify-center">
-                    <div className="relative w-2/5 lg:w-2/3">
+                  <div className="h-56 pl-12 lg:pl-0 flex justify-center">
+                    <div className="relative w-2/3 lg:w-4/5">
                       <div className="absolute bottom-0">
                         <Image src={introNonCustodialBase} layout="intrinsic" />
                       </div>
