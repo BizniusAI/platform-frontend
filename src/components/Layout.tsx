@@ -17,7 +17,7 @@ const Layout = ({ children, title = '', metadata }: TProps): JSX.Element => {
   const router = useRouter()
 
   return (
-    <div className="font-sans bg-white">
+    <div className="font-sans bg-sefo-purple-700 text-white">
       <Head>
         <meta charSet="utf-8" />
 

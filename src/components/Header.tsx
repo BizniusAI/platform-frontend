@@ -1,67 +1,30 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-// import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 
-import logo from '@public/img/sefoFinanceLogo.svg'
+import logo from '@public/img/sefoFinanceLogo.png'
 
 import Container from '@/components/Container'
-// import { DesktopMenu, MobileMenu } from '@/components/Menu'
-import { languages, litepaperLink, twitterLink } from '@/constants'
-
-const Announcement = (): JSX.Element => {
-  const { t } = useTranslation(['common'])
-
-  return (
-    <div className="text-white font-medium bg-gradient-to-r from-sefo-purple to-sefo-blue">
-      <Container className="h-14">
-        <div className="h-full flex items-center justify-center">
-          <Link href={litepaperLink}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center hover:underline"
-            >
-              {t('announcement.litepaper')}
-            </a>
-          </Link>
-        </div>
-      </Container>
-    </div>
-  )
-}
+import { twitterLink } from '@/constants'
 
 const Header = (): JSX.Element => {
-  const { t, i18n } = useTranslation(['menu', 'common'])
-  const [isMobileHidden /*setIsMobileHidden*/] = useState<boolean>(true)
-  // const router = useRouter()
-
-  /*
-  const changeLocale = () => {
-    router.push(router.pathname, router.asPath, {
-      locale:
-        i18n.language.toLocaleLowerCase() === 'zh-hant' ? 'en' : 'zh-hant',
-    })
-  }
-  */
+  const { t } = useTranslation(['menu', 'common'])
+  const [isMobileHidden, setIsMobileHidden] = useState<boolean>(true)
 
   return (
     <>
-      <header className="fixed top-0 w-full bg-white z-50 select-none shadow-md">
-        <Announcement />
-
+      <header className="fixed top-0 w-full bg-sefo-purple-700 bg-opacity-75 backdrop-blur shadow-md z-50 select-none">
         <Container>
           <nav className="flex justify-between md:justify-start items-center gap-x-8 py-3 h-16">
-            <div className="flex w-24 h-full order-2 md:order-1 cursor-pointer">
+            <div className="flex w-[6.5rem] h-full order-2 md:order-1 cursor-pointer">
               <Link href="/">
-                <a className="relative w-full h-full">
+                <a className="relative w-full h-full inline-flex items-center">
                   <Image
                     src={logo}
-                    layout="fill"
+                    layout="intrinsic"
                     alt={`${t('brand.name', { ns: 'common' })} Logo`}
                   />
                 </a>
@@ -74,39 +37,34 @@ const Header = (): JSX.Element => {
             <div className="hidden md:block md:grow md:order-3"></div>
 
             <div className="hidden md:flex md:gap-8 text-sm font-semibold tracking-wider md:order-4">
+              <div className="flex flex-col items-center select-none cursor-not-allowed">
+                <div className="text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200">
+                  White Paper
+                </div>
+
+                <div className="-mt-1 text-xs bg-clip-text text-transparent bg-gradient-to-b from-neutral-200">
+                  (coming soon)
+                </div>
+              </div>
+
               <Link href={twitterLink}>
                 <a target="_blank" rel="noopener noreferrer">
-                  <div className="flex items-center gap-2 px-1">
-                    <FontAwesomeIcon className="w-4" icon={faTwitter} />
-                    Twitter
-                  </div>
+                  <div className="flex items-center text-lg">Twitter</div>
                 </a>
               </Link>
-
-              <div
-                className="flex items-center gap-2 px-1"
-                // onClick={changeLocale}
-              >
-                <FontAwesomeIcon className="w-4" icon={faEarthAmericas} />
-                <span className="inline-flex gap-2">
-                  {languages[i18n.language?.toLocaleLowerCase()]}
-                  {/*<FontAwesomeIcon className="w-3" icon={faRightLeft} />*/}
-                </span>
-              </div>
             </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center order-1">
-              {/*
-            <div
-              className={`hamburger-btn ${isMobileHidden ? '' : 'open'}`}
-              onClick={() => setIsMobileHidden((prev) => !prev)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            */}
+              <div
+                className={`hamburger-btn ${isMobileHidden ? '' : 'open'}`}
+                onClick={() => setIsMobileHidden((prev) => !prev)}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
               <div className="w-4"></div>
             </div>
 
