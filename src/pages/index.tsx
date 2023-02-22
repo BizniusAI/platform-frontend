@@ -16,6 +16,11 @@ import { defaultLocales, gradientTextClassnames } from '@/constants'
 
 // images
 import marble from '@public/img/homepage/marble.png'
+import bgEllipse1 from '@public/img/homepage/bg.ellipse1.png'
+import bgEllipse2 from '@public/img/homepage/bg.ellipse2.png'
+import bgEllipse3 from '@public/img/homepage/bg.ellipse3.png'
+import bgEllipse4 from '@public/img/homepage/bg.ellipse4.png'
+import bgEllipse5 from '@public/img/homepage/bg.ellipse5.png'
 import introImprovementBase from '@public/img/homepage/intro.improvement.base.png'
 import introImprovementLn from '@public/img/homepage/intro.improvement.ln.png'
 import introNonCustodialBase from '@public/img/homepage/intro.nonCustodial.base.png'
@@ -96,8 +101,20 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <div className="-mt-32 w-full">
-        <Container>
+      <div className="relative -mt-32 w-full">
+        <div className="absolute w-2/5">
+          <Image src={bgEllipse1} layout="responsive" />
+        </div>
+
+        <div className="absolute right-0 w-3/5">
+          <Image src={bgEllipse2} layout="responsive" />
+        </div>
+
+        <div className="absolute right-0 -bottom-20 w-1/5">
+          <Image src={bgEllipse3} layout="responsive" />
+        </div>
+
+        <Container className="relative">
           <section className="h-screen relative md:grid md:grid-cols-5 items-center py-16">
             <div className="col-span-3 relative">
               <div>
@@ -165,8 +182,12 @@ const Home: NextPage = () => {
         </Container>
       </div>
 
-      <section className="mb-16">
-        <Container>
+      <section className="mb-16 relative">
+        <div className="absolute -top-36 w-full">
+          <Image src={bgEllipse4} layout="responsive" />
+        </div>
+
+        <Container className="relative">
           <H2 className="text-center">
             <Trans i18nKey="intro.title" ns="homepage">
               <span>
@@ -282,8 +303,12 @@ const Home: NextPage = () => {
         </Container>
       </section>
 
-      <section className="my-16">
-        <Container>
+      <section className="my-16 relative">
+        <div className="absolute -bottom-44 w-1/4">
+          <Image src={bgEllipse5} layout="responsive" />
+        </div>
+
+        <Container className="relative">
           <H2>{t('mechanism.title')}</H2>
 
           <div className="grid grid-cols-2 gap-4 py-8 sm:pb-40">

@@ -16,7 +16,7 @@ const Header = (): JSX.Element => {
 
   return (
     <>
-      <header className="fixed top-0 w-full bg-sefo-purple-700 z-50 select-none">
+      <header className="fixed top-0 w-full bg-sefo-purple-700 bg-opacity-75 backdrop-blur shadow-md z-50 select-none">
         <Container>
           <nav className="flex justify-between md:justify-start items-center gap-x-8 py-3 h-16">
             <div className="flex w-[6.5rem] h-full order-2 md:order-1 cursor-pointer">
