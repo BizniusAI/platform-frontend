@@ -10,6 +10,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       colors: {
         black: '#1E2328',
         sefo: {
