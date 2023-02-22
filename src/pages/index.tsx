@@ -96,9 +96,9 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <div className="-mt-32 flex flex-col w-full">
-        <Container className="pt-32 grow">
-          <section className="h-full relative md:grid md:grid-cols-5 items-center py-8">
+      <div className="-mt-32 w-full">
+        <Container>
+          <section className="h-screen relative md:grid md:grid-cols-5 items-center py-16">
             <div className="col-span-3 relative">
               <div>
                 <H1 className="mt-2 md:max-w-[30rem] text-center md:text-left sm:leading-[3rem]">
@@ -165,7 +165,7 @@ const Home: NextPage = () => {
         </Container>
       </div>
 
-      <section className="my-16">
+      <section className="mb-16">
         <Container>
           <H2 className="text-center">
             <Trans i18nKey="intro.title" ns="homepage">
@@ -286,7 +286,7 @@ const Home: NextPage = () => {
         <Container>
           <H2>{t('mechanism.title')}</H2>
 
-          <div className="grid grid-cols-2 gap-4 py-8 sm:py-12">
+          <div className="grid grid-cols-2 gap-4 py-8 sm:pb-40">
             <div className="flex flex-col relative">
               <VideoPlayer
                 videoId={1}
@@ -344,7 +344,7 @@ const Home: NextPage = () => {
       <section className="my-16">
         <Container>
           <H2 className="text-center">{t('team.title')}</H2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 gap-4 sm:gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 py-8 sm:py-24 px-8 sm:px-0 gap-4 sm:gap-8 text-center">
             <GradientBlock className="flex flex-col pb-4">
               <div>
                 <Image src={memberAidan} layout="intrinsic" />
@@ -402,7 +402,7 @@ const Home: NextPage = () => {
         <Container>
           <H2 className="text-center">{t('backedBy.title')}</H2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 py-8 xs:py-16 sm:py-24 px-8 xs:px-20 sm:px-0 gap-4 xs:gap-6 sm:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 py-8 sm:py-24 px-8 sm:px-0 gap-4 sm:gap-12">
             <div className="flex justify-center items-center">
               <Image
                 src={backedByBtcStartupLab}
