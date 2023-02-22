@@ -201,7 +201,7 @@ const Home: NextPage = () => {
         </Container>
 
         <div className="absolute bottom-8 w-full flex justify-center">
-          <div className="w-20 h-20">
+          <div className="w-20 h-20 relative">
             <ReactPlayer
               url={`/videos/scroll.mp4`}
               width="auto"
@@ -211,6 +211,7 @@ const Home: NextPage = () => {
               loop={true}
               playsinline={true}
             />
+            <div className="absolute top-0 w-full h-full bg-gradient-radial from-white/0 to-sefo-purple-700/100"></div>
           </div>
         </div>
       </div>
