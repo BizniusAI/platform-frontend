@@ -9,7 +9,12 @@ type TProps = {
   setStep: (step: 1 | 2 | 3 | 4) => void
 }
 
-const VideoPlayer = ({ videoId, nextVideoId, step, setStep }: TProps) => {
+const VideoPlayer = ({
+  videoId,
+  nextVideoId,
+  step,
+  setStep,
+}: TProps): JSX.Element => {
   return (
     <div
       className={classNames(

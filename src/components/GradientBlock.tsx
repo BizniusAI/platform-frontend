@@ -6,7 +6,7 @@ type TProps = {
   className?: string
 }
 
-const GradientBlock = ({ children, className }: TProps) => {
+const GradientBlock = ({ children, className }: TProps): JSX.Element => {
   return (
     <div
       className={classNames(

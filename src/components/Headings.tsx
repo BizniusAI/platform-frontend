@@ -6,7 +6,7 @@ type TProps = {
   className?: string
 }
 
-export const H1 = ({ className, children }: TProps) => {
+export const H1 = ({ className, children }: TProps): JSX.Element => {
   return (
     <h1
       className={classNames(
@@ -19,7 +19,7 @@ export const H1 = ({ className, children }: TProps) => {
   )
 }
 
-export const H2 = ({ className, children }: TProps) => {
+export const H2 = ({ className, children }: TProps): JSX.Element => {
   return (
     <h2 className={classNames('text-2xl font-bold select-none', className)}>
       {children}
@@ -27,7 +27,7 @@ export const H2 = ({ className, children }: TProps) => {
   )
 }
 
-export const H3 = ({ className, children }: TProps) => {
+export const H3 = ({ className, children }: TProps): JSX.Element => {
   return (
     <h2 className={classNames('text-xl font-bold select-none', className)}>
       {children}

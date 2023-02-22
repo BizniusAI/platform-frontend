@@ -6,7 +6,7 @@ type TProps = {
   children?: ReactNode
 }
 
-const GradientText = ({ children }: TProps) => {
+const GradientText = ({ children }: TProps): JSX.Element => {
   return <span className={gradientTextClassnames}>{children}</span>
 }
 
