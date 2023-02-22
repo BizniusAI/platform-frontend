@@ -215,7 +215,7 @@ const Home: NextPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4 px-0 sm:px-16 md:px-24 lg:px-0 py-8 sm:py-12 sm:pt-16">
             <div className="lg:col-span-2">
-              <GradientBlock className="h-full px-6 bg-blend-hue">
+              <GradientBlock className="h-full px-6 pb-4">
                 <div className="flex flex-col gap-2">
                   <div className="h-52 flex justify-center">
                     <div className="relative w-2/5 lg:w-2/3">
@@ -251,7 +251,7 @@ const Home: NextPage = () => {
 
             <div className="lg:col-span-3">
               <div className="flex flex-col gap-8 lg:gap-2">
-                <GradientBlock className="px-6 bg-blend-hue">
+                <GradientBlock className="px-6 pb-4">
                   <div className="grid grid-cols-5 gap-2">
                     <div className="col-span-3">
                       <div className="flex">
@@ -289,7 +289,7 @@ const Home: NextPage = () => {
                   </div>
                 </GradientBlock>
 
-                <GradientBlock className="px-6 bg-blend-hue">
+                <GradientBlock className="px-6 pb-4">
                   <div className="flex">
                     <H3 className={gradientTextClassnames}>
                       <Trans
@@ -367,7 +367,7 @@ const Home: NextPage = () => {
 
             <div className="flex flex-col gap-2">
               <div
-                className="relative h-52 sm:h-40 lg:h-64 overflow-hidden"
+                className="relative h-[18rem] min-[450px]:h-52 sm:h-40 lg:h-64 overflow-hidden"
                 ref={mechanismStepDiv}
               >
                 {mechanisms.map((item) => (
