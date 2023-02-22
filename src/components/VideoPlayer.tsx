@@ -28,6 +28,7 @@ const VideoPlayer = ({
         height="auto"
         playing={step === videoId}
         muted={true}
+        playsinline={true}
         onEnded={() => {
           setTimeout(
             () => {
