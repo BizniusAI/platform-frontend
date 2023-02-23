@@ -32,7 +32,7 @@ const MechanismDescription = forwardRef<Ref, Props>(
             ns="homepage"
           ></Trans>
         </H3>
-        <p className="mt-2">
+        <p className="mt-2 text-justify">
           {t(`mechanism.step${props.mechanismId}.description`)}
         </p>
       </div>
