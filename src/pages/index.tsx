@@ -134,14 +134,14 @@ const Home: NextPage = () => {
         </div>
 
         <Container className="relative">
-          <section className="h-screen relative flex flex-col gap-4 md:gap-0 md:grid md:grid-cols-5 justify-center items-center py-16">
-            <div className="col-span-3 relative order-2 md:order-1">
+          <section className="h-screen relative flex flex-col gap-4 sm:landscape:gap-0 sm:landscape:grid sm:landscape:grid-cols-5 md:gap-0 md:grid md:grid-cols-5 justify-center items-center py-16">
+            <div className="col-span-3 relative order-2 sm:landscape:order-1 md:order-1">
               <div>
-                <H1 className="mt-2 md:max-w-[30rem] text-center md:text-left sm:leading-[3rem]">
+                <H1 className="mt-2 md:max-w-[30rem] text-center sm:landscape:text-left md:text-left sm:leading-[3rem]">
                   <Trans i18nKey="main.slogan" ns="homepage"></Trans>
                 </H1>
 
-                <div className="mt-2 md:mt-6 flex justify-center md:justify-start">
+                <div className="mt-2 sm:landscape:mt-6 md:mt-6 flex justify-center sm:landscape:justify-start md:justify-start">
                   <div className="inline-flex">
                     <input
                       type="email"
@@ -172,7 +172,7 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div className="col-span-2 flex justify-center items-center order-1 md:order-2">
+            <div className="col-span-2 flex justify-center items-center order-1 sm:landscape:order-2 md:order-2">
               <div className="relative w-44 sm:w-52 md:w-48 lg:w-56 h-44 sm:h-52 md:h-48 lg:h-56">
                 <div className="absolute right-0 w-1/2 h-1/2" id="marble-left">
                   <Image src={marble} layout="fill" />
@@ -200,7 +200,7 @@ const Home: NextPage = () => {
           </section>
         </Container>
 
-        <div className="absolute bottom-8 w-full flex justify-center">
+        <div className="absolute bottom-8 w-full flex justify-center landscape:hidden landscape:min-[900px]:flex">
           <div className="w-20 h-20 relative">
             <ReactPlayer
               url={`/videos/scroll.mp4`}
@@ -260,14 +260,16 @@ const Home: NextPage = () => {
                       </H3>
                     </div>
 
-                    <p className="mt-3">{t('intro.solution1.description')}</p>
+                    <p className="mt-3 text-justify">
+                      {t('intro.solution1.description')}
+                    </p>
                   </div>
                 </div>
               </GradientBlock>
             </div>
 
             <div className="lg:col-span-3">
-              <div className="flex flex-col gap-8 lg:gap-2">
+              <div className="flex flex-col gap-8 lg:gap-6">
                 <GradientBlock className="px-6 pb-4">
                   <div className="grid grid-cols-5 gap-2">
                     <div className="col-span-3">
@@ -280,7 +282,9 @@ const Home: NextPage = () => {
                         </H3>
                       </div>
 
-                      <p className="mt-3">{t('intro.solution2.description')}</p>
+                      <p className="mt-3 text-justify">
+                        {t('intro.solution2.description')}
+                      </p>
                     </div>
 
                     <div className="col-span-2 relative">
@@ -318,7 +322,9 @@ const Home: NextPage = () => {
 
                   <div className="grid grid-cols-3 gap-2">
                     <div className="col-span-2">
-                      <p className="mt-3">{t('intro.solution3.description')}</p>
+                      <p className="mt-3 text-justify">
+                        {t('intro.solution3.description')}
+                      </p>
                     </div>
 
                     <div className="relative">
