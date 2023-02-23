@@ -1,6 +1,7 @@
 {
   "brand.name": "SeFo Finance",
   "title": "SeFo Finance",
+  "email": "admin@sefo.fi",
   "learnMore": "了解更多",
   "login": "登入",
   "register": "註冊",
@@ -15,8 +16,6 @@
   "amount": "Amount",
   "balance": "Balance",
   "success": "Success",
-
-  "announcement.litepaper": "We are excited to announce our newest version of Lite Paper!",
 
   "example.email": "xxx@gmail.com",
 
