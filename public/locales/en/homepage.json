@@ -17,7 +17,7 @@
   "mechanism.step2.title": "2. Private and Secure Matching",
   "mechanism.step2.description": "Orders are submitted off-chain to our matching engine to ensure privacy whilst you wait for a match.",
   "mechanism.step3.title": "3. Maximized Utilization During Matching",
-  "mechanism.step3.description": "If we can't find an immediate match, We redirect you to our 'channel highway' for a non-blocking experience and extra yield. This not only maximizes your earnings but also improves scalability and stability of the network.",
+  "mechanism.step3.description": "If we can't find an immediate match, We redirect you to our \"channel highway\" for a non-blocking experience and extra yield. This not only maximizes your earnings but also improves scalability and stability of the network.",
   "mechanism.step4.title": "4. Optimized Lending",
   "mechanism.step4.description": "Once matched, liquidity is returned to your control and the appropriate parties are notified for lending with optimized route direction and best rate.",
 
