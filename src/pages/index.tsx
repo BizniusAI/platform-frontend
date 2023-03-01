@@ -260,9 +260,7 @@ const Home: NextPage = () => {
                       </H3>
                     </div>
 
-                    <p className="mt-3 text-justify">
-                      {t('intro.solution1.description')}
-                    </p>
+                    <p className="mt-3">{t('intro.solution1.description')}</p>
                   </div>
                 </div>
               </GradientBlock>
@@ -282,9 +280,7 @@ const Home: NextPage = () => {
                         </H3>
                       </div>
 
-                      <p className="mt-3 text-justify">
-                        {t('intro.solution2.description')}
-                      </p>
+                      <p className="mt-3">{t('intro.solution2.description')}</p>
                     </div>
 
                     <div className="col-span-2 relative">
@@ -322,9 +318,7 @@ const Home: NextPage = () => {
 
                   <div className="grid grid-cols-3 gap-2">
                     <div className="col-span-2">
-                      <p className="mt-3 text-justify">
-                        {t('intro.solution3.description')}
-                      </p>
+                      <p className="mt-3">{t('intro.solution3.description')}</p>
                     </div>
 
                     <div className="relative">
